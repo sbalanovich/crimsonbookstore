@@ -141,86 +141,42 @@
     </head>
 
     <body style="background-color:	#FFFFFF; overflow:auto;"> 
-    <?php
 
-    //checks for logged in or not
-    //if so
-    if(!empty($_SESSION["id"]))
-    {
-        print("<div class=\"navbar\">");
-          print("<div class=\"navbar-inner\">");
-              print("<div class=\"container\">");
-              print("<a class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">");
-                print("<span class=\"icon-bar\"></span>");
-                print("<span class=\"icon-bar\"></span>");
-                print("<span class=\"icon-bar\"></span>");
-              print("</a>");
-              print("<a class=\"brand\" href=\"catalogue.php\"><img src=\"https://twimg0-a.akamaihd.net/profile_images/1163303038/Shield_RGB_Twitter.png\" style=\"height:25px;width:25px;\">Harvard Books</a>");
-              print("<div class=\"nav-collapse\">");
-                print("<ul class=\"nav pull-right\">");
-                print("<li class=\"divider-vertical\"></li>");
-                  print("<li class=\"dropdown\">");
-                    print("<a class=\"dropdown-toggle\" href=\"#\" data-toggle=\"dropdown\"> <i class=\"icon-th-list icon-white\"></i>&nbsp;Menu<strong class=\"caret\"></strong></a>");
-                    print("<ul class=\"dropdown-menu\" style=\"padding: 15px; padding-bottom: 15px;\">");
-                        print("<li> <a href=\"index.php\"> <i class=\"icon-user icon-white\"></i>&nbsp;Profile</a> </li>");
-                        print("<li> <a href=\"inbox.php\"> <i class=\"icon-envelope icon-white\"></i>&nbsp;Messages</a> </li>");
-                        print("<li> <a href=\"logout.php\"> <i class=\"icon-off icon-white\"></i>&nbsp;Logout</a> </li>");
-                    print("</div>");
-                  print("</li>");
-                print("</ul>");
-                print("<ul class=\"nav pull-right\">");
-                    print("<li class=\"divider-vertical\"></li>");
-                    print("<a class=\"btn btn-inverse\" href=\"sell_0.php\" id=\"navbtn\"> Sell </a>");
-                print("</ul>");
-                print("<ul class=\"nav pull-right\">");
-                    print("<li class=\"divider-vertical\"></li>");
-                    print("<a class=\"btn btn-inverse\" href=\"buy_0.php\" id=\"navbtn\"> Search </a>");
-                print("</ul>");
-              print("</div>");
-            print("</div>");
-          print("</div>");
-        print("</div>");
-    }
-    //if not
-    else
-    {
-         print("<div class=\"navbar\">");
-              print("<div class=\"navbar-inner\">");
-                  print("<div class=\"container\">");
-                  print("<a class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">");
-                    print("<span class=\"icon-bar\"></span>");
-                    print("<span class=\"icon-bar\"></span>");
-                    print("<span class=\"icon-bar\"></span>");
-                  print("</a>");
-                  print("<a class=\"brand\" href=\"catalogue.php\"><img src=\"https://twimg0-a.akamaihd.net/profile_images/1163303038/Shield_RGB_Twitter.png\" style=\"height:25px;width:25px;\">Harvard Books</a>");
-                  print("<!-- Start of the nav bar content -->");
-                  print("<div class=\"nav-collapse\"><!-- Other nav bar content -->");
-                    print("<!-- The drop down menu -->");
-                    print("<ul class=\"nav pull-right\">");
-                    print("<li class=\"divider-vertical\"></li>");
-                      print("<li class=\"dropdown\">");
-                        print("<a class=\"dropdown-toggle \" href=\"#\" data-toggle=\"dropdown\"> <i class=\"icon-th-list icon-white\"></i>&nbsp;Login<strong class=\"caret\"></strong></a>");
-                        print("<ul class=\"dropdown-menu\" style=\"padding: 15px; padding-bottom: 15px;\">");
-                           print("<form action=\"login.php\" method=\"post\" accept-charset=\"UTF-8\">");
-                              print("<input placeholder = \"username\"id=\"username\" style=\"margin-bottom: 15px;\" type=\"text\" name=\"username\" size=\"30\" />");
-                              print("<input placeholder=\"password\"id=\"password\" style=\"margin-bottom: 15px;\" type=\"password\" name=\"password\" size=\"30\" />");
-                              print("<input id=\"user_remember_me\" style=\"float: left; margin-right: 10px;\" type=\"checkbox\" name=\"remember_me\" value=\"1\" />");
-                              print("<label class=\"string optional\" for=\"user_remember_me\">Remember me</label>");                             
-                              print("<input class=\"btn btn-primary\" style=\"clear: left; width: 100%; height: 32px; font-size: 13px;\" type=\"submit\" name=\"commit\" value=\"Sign In\" />");
-                            print("</form>");
-                         print("</div>");
-                      print("</li>");
-                    print("</ul>");
-                    print("<ul class=\"nav pull-right\">");
-                    print("<li class=\"divider-vertical\"></li>");
-                    print("<a class=\"btn btn-inverse\" href=\"buy_0.php\" id=\"navbtn\"> Search </a>");
-                    print("</ul>");
-                  print("</div>");
-                print("</div>");
-              print("</div>");
-            print("</div>");
-    }
-?>
+         <div class="navbar">
+              <div class="navbar-inner">
+                  <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  <a class="brand" href="catalogue.php"><img src="https://twimg0-a.akamaihd.net/profile_images/1163303038/Shield_RGB_Twitter.png" style="height:25px;width:25px;">Harvard Books</a>
+                  <!-- Start of the nav bar content -->
+                  <div class="nav-collapse"><!-- Other nav bar content -->
+                    <!-- The drop down menu -->
+                    <ul class="nav pull-right">
+                    <li class="divider-vertical"></li>
+                      <li class="dropdown">
+                        <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-th-list icon-white"></i>&nbsp;Login<strong class="caret"></strong></a>
+                        <ul class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;">
+                           <form action="login.php" method="post" accept-charset="UTF-8">
+                              <input placeholder = "username"id="username" style="margin-bottom: 15px;" type="text" name="username" size="30" />
+                              <input placeholder="password"id="password" style="margin-bottom: 15px;" type="password" name="password" size="30" />
+                              <input id="user_remember_me" style="float: left; margin-right: 10px;" type="checkbox" name="remember_me" value="1" />
+                              <label class="string optional" for="user_remember_me">Remember me</label>                             
+                              <input class="btn btn-primary" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Sign In" />
+                            </form>
+                         </div>
+                      </li>
+                    </ul>
+                    <ul class="nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <a class="btn btn-inverse" href="buy_0.php" id="navbtn"> Search </a>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
 
         <div class="container-fluid">
 

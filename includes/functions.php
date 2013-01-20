@@ -12,11 +12,11 @@
     require_once("constants.php");
 
     /**
-     * Apologizes to user with message.
+     * Provides user with a message.
      */
     function apologize($message)
     {
-        render("apology.php", array("message" => $message));
+        render("apology.php", ["message" => $message]);
         exit;
     }
 
@@ -48,55 +48,87 @@
         // destroy session
         session_destroy();
     }
-
+    
     /**
      * Returns a stock by symbol (case-insensitively) else false if not found.
      */
-    function lookup($symbol)
+    function search_split_terms($terms){
+
+		$terms = preg_replace("/\"(.*?)\"/e", "search_transform_term('\$1')", $terms);
+		$terms = preg_split("/\s+|,/", $terms);
+
+		$out = array();
+
+		foreach($terms as $term){
+
+			$term = preg_replace("/\{WHITESPACE-([0-9]+)\}/e", "chr(\$1)", $term);
+			$term = preg_replace("/\{COMMA\}/", ",", $term);
+
+			$out[] = $term;
+		}
+
+		return $out;
+	}
+
+    /**
+     * Check if a username is valid
+     */
+    function checkuname($aname)
     {
-        // reject symbols that start with ^
-        if (preg_match("/^\^/", $symbol))
+        if(!preg_match("/^[A-Za-z0-9-_','\s]+$/",$aname))
         {
             return false;
         }
-
-        // reject symbols that contain commas
-        if (preg_match("/,/", $symbol))
+        else
+        {
+            return true;
+        }
+    } 
+    
+    /**
+     * Check if an e-mail is valid
+     */
+    function checkEmail($email)
+    {   
+        // First, we check that there's one @ symbol, and that the lengths are right
+        if (!preg_match("/^[^@]{1,64}@[^@]{1,255}$/", $email))
+        {
+            // Email invalid because wrong number of characters in one section, or wrong number of @ symbols.
+            return false;
+        }
+        // Split it into sections to make life easier
+        $email_array = explode("@", $email);
+        if ($email_array[1] !== 'college.harvard.edu')
         {
             return false;
         }
-
-        // open connection to Yahoo
-        $handle = @fopen("http://download.finance.yahoo.com/d/quotes.csv?f=snl1&s=$symbol", "r");
-        if ($handle === false)
+        $local_array = explode(".", $email_array[0]);
+        for ($i = 0; $i < sizeof($local_array); $i++) 
         {
-            return false;
+            if (!preg_match("/^(([A-Za-z0-9!#$%&'*+\/=?^_`{|}~-][A-Za-z0-9!#$%&'*+\/=?^_`{|}~\.-]{0,63})|(\"[^(\\|\")]{0,62}\"))$/", $local_array[$i]))
+            {
+                return false;
+            }
+        }
+        if (!preg_match("/^\[?[0-9\.]+\]?$/", $email_array[1])) // Check if domain is IP. If not, it should be valid domain name
+        { 
+            $domain_array = explode(".", $email_array[1]);
+            if (sizeof($domain_array) < 2) 
+            {
+                return false; // Not enough parts to domain
+            }
+            for ($i = 0; $i < sizeof($domain_array); $i++)
+            {
+                if (!preg_match("/^(([A-Za-z0-9][A-Za-z0-9-]{0,61}[A-Za-z0-9])|([A-Za-z0-9]+))$/", $domain_array[$i])) 
+                {
+                    return false;
+                }
+            }
         }
 
-        // download first line of CSV file
-        $data = fgetcsv($handle);
-        if ($data === false || count($data) == 1)
-        {
-            return false;
-        }
-
-        // close connection to Yahoo
-        fclose($handle);
-
-        // ensure symbol was found
-        if ($data[2] === "0.00")
-        {
-            return false;
-        }
-
-        // return stock as an associative array
-        return array(
-            "symbol" => $data[0],
-            "name" => $data[1],
-            "price" => $data[2],
-        );
+        return true;
     }
-
+    
     /**
      * Executes SQL statement, possibly with parameters, returning
      * an array of all rows in result set or false on (non-fatal) error.
@@ -134,8 +166,7 @@
         if ($statement === false)
         {
             // trigger (big, orange) error
-            $tmp=$handle->errorInfo();
-            trigger_error($tmp[2], E_USER_ERROR);
+            trigger_error($handle->errorInfo()[2], E_USER_ERROR);
             exit;
         }
 
@@ -193,7 +224,7 @@
     /**
      * Renders template, passing in values.
      */
-    function render($template, $values = array())
+    function render($template, $values = [])
     {
         // if template exists, render it
         if (file_exists("../templates/$template"))
