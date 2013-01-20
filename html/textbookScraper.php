@@ -30,6 +30,7 @@
         $simpleBrowser->get($url);
         // only get urls that don't require login into Harvard PIN
         // determine if there is a reserve reading list link
+        sleep(1);
         if($simpleBrowser->isClickable("Reserve Reading List"))
         {    
             // click on the link

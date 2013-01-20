@@ -94,7 +94,7 @@ color:#F0F7FF;
 
 #centercontent
 {
-background:url(http://i.imgur.com/2qb45.jpg); 
+background: #7D0000; 
 overflow:auto; 
 padding-left:30px; 
 padding-right:30px;
@@ -106,7 +106,7 @@ padding-bottom:30px;
 
 .centercontent
 {
-background:url(http://i.imgur.com/2qb45.jpg); 
+background: #7D0000; 
 overflow:auto; 
 padding-left:30px; 
 padding-right:30px;
@@ -118,7 +118,7 @@ padding-bottom:30px;
 
 .centercontentsmall
 {
-background:url(http://i.imgur.com/2qb45.jpg); 
+background: #7D0000; 
 overflow:auto; 
 padding:10px;
  -moz-box-shadow:    3px 3px 5px 6px #000000;
@@ -128,7 +128,7 @@ padding:10px;
 
 .message
 {
-background:url(http://i.imgur.com/2qb45.jpg); 
+background: #7D0000; 
 overflow:auto; 
 padding:1px;
  -moz-box-shadow:    3px 3px 5px 6px #000000;
@@ -166,7 +166,7 @@ color:#FFFFFF;
 
 .shadow
 {
-background:url(http://i.imgur.com/2qb45.jpg); 
+background: #7D0000; 
  -moz-box-shadow:    3px 3px 5px 6px #000000;
   -webkit-box-shadow: 0px 0px 5px 6px #000000;
   box-shadow:         -1px 6px 5px 6px #000000;
@@ -207,7 +207,7 @@ background:url(http://i.imgur.com/2qb45.jpg);
 {
     height: 100px;
     width: 80px;
-    background:url(http://i.imgur.com/2qb45.jpg);    transition: width 1s, height 1s, transform 1s;
+    background: #7D0000;    transition: width 1s, height 1s, transform 1s;
     transition-delay: 0.5s;
     -moz-transition:  width 2s, height 2s, -moz-transform 2s;
     -moz-transition-delay:0.5s;

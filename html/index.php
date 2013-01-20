@@ -2,11 +2,8 @@
 
     // configuration
     require("../includes/config.php"); 
-    
-    //get current id
-    $currentid = $_SESSION["id"];
 
-    // render portfolio
-    render("portfolio.php", array("title" => "Seller Profile", "books" => $books, "username" => $username, "sellerbooks" => $sellerbooks));
+    // render main
+    render("main.php", array("title" => "Welcome to Crimson Bookstore!"));
     
 ?>

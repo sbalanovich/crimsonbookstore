@@ -9,9 +9,9 @@
         <link href="css/styles.css" rel="stylesheet"/>
 
         <?php if (isset($title)): ?>
-            <title>Harvard Book Exchange: <?= htmlspecialchars($title) ?></title>
+            <title>Harvard Bookstore: <?= htmlspecialchars($title) ?></title>
         <?php else: ?>
-            <title>Harvard Book Exchange</title>
+            <title>Harvard Bookstore</title>
         <?php endif ?>
 
         <script src="js/jquery-1.8.2.js"></script>
@@ -140,7 +140,7 @@
 
     </head>
 
-    <body style="background:url(img/back_main.jpg); overflow:auto;"> 
+    <body style="background-color:	#FFFFFF; overflow:auto;"> 
     <?php
 
     //checks for logged in or not
@@ -203,7 +203,7 @@
                         print("<ul class=\"dropdown-menu\" style=\"padding: 15px; padding-bottom: 15px;\">");
                            print("<form action=\"login.php\" method=\"post\" accept-charset=\"UTF-8\">");
                               print("<input placeholder = \"username\"id=\"username\" style=\"margin-bottom: 15px;\" type=\"text\" name=\"username\" size=\"30\" />");
-                              print("<input placeholder=\"passworld\"id=\"password\" style=\"margin-bottom: 15px;\" type=\"password\" name=\"password\" size=\"30\" />");
+                              print("<input placeholder=\"password\"id=\"password\" style=\"margin-bottom: 15px;\" type=\"password\" name=\"password\" size=\"30\" />");
                               print("<input id=\"user_remember_me\" style=\"float: left; margin-right: 10px;\" type=\"checkbox\" name=\"remember_me\" value=\"1\" />");
                               print("<label class=\"string optional\" for=\"user_remember_me\">Remember me</label>");                             
                               print("<input class=\"btn btn-primary\" style=\"clear: left; width: 100%; height: 32px; font-size: 13px;\" type=\"submit\" name=\"commit\" value=\"Sign In\" />");

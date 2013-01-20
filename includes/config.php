@@ -20,13 +20,13 @@
     // enable sessions
     session_start();
 
-    // require authentication for most pages
-    if (!preg_match("{(?:login|logout|register|user_available|email_available|activate|pass_match|check_name|catalogue|buy_profile|buy_0|department)\.php$}", $_SERVER["PHP_SELF"]))
-    {
-        if (empty($_SESSION["id"]))
-        {
-            redirect("login.php");
-        }
-    }
+#    // require authentication for most pages
+#    if (!preg_match("{(?:index|login|logout|register)\.php$}", $_SERVER["PHP_SELF"]))
+#    {
+#        if (empty($_SESSION["id"]))
+#        {
+#            redirect("/");
+#        }
+#    }
 
 ?>
