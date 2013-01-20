@@ -20,7 +20,13 @@
         </legend>
     
     <h3 style="color:#000000;">Time to Buy!</h3>
-    </br><br>
+    </br>
+    <form action="https://www.googleapis.com/books/v1/volumes" method="get">
+        <input name="q" type="text"/>
+        <br/>
+        <input type="submit" value="Find Book"/>
+    </form>
+    <br>
     <h4 style="color:#000000;">Pretend there's stuff here</h4>
     </br><br>
             <p style="color:#000000;">This is a filler paragraph</p>
