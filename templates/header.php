@@ -140,7 +140,7 @@
 
     </head>
 
-    <body style="background-color:	#FFFFFF; overflow:auto;"> 
+    <body style="background-color:	#7D0000; overflow:auto;"> 
 
          <div class="navbar">
               <div class="navbar-inner">
