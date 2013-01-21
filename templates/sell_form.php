@@ -17,7 +17,7 @@
         printf("\n");
         
         ?>
-        </legend>
+        </legend> 
         <h2 style="color:#000000;">Sell Books!</h2>
     </br><br>
     <form action="buy_0.php" method="GET">
