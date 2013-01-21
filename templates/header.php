@@ -93,15 +93,7 @@
         height:64px;
         font-size:24px;
         text-align:center;
-        width:600px;
-        }
-        
-        #searchbook
-        {
-        height:70px;
-        font-size:28px;
-        text-align:center;
-        width:150px;
+        width:150%;
         }
         
         .messagebox{
@@ -135,7 +127,35 @@
          color:#CC0000;
         }
 
-	   
+	    .arrow_box {
+	        position: relative;
+	        background: #731515;
+	        border: 4px solid #c2e1f5;
+        }
+        .arrow_box:after, .arrow_box:before {
+	        top: 100%;
+	        border: solid transparent;
+	        content: " ";
+	        height: 0;
+	        width: 0;
+	        position: absolute;
+	        pointer-events: none;
+        }
+
+        .arrow_box:after {
+	        border-color: rgba(115, 21, 21, 0);
+	        border-top-color: #731515;
+	        border-width: 30px;
+	        left: 50%;
+	        margin-left: -30px;
+        }
+        .arrow_box:before {
+	        border-color: rgba(194, 225, 245, 0);
+	        border-top-color: #c2e1f5;
+	        border-width: 36px;
+	        left: 50%;
+	        margin-left: -36px;
+        }
 	    </style>
 
     </head>
@@ -157,7 +177,7 @@
                     <ul class="nav pull-right">
                     <li class="divider-vertical"></li>
                       <li class="dropdown">
-                        <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-th-list icon-white"></i>&nbsp;Login<strong class="caret"></strong></a>
+                        <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-th-list icon-white"></i>&nbsp;[User's Name Here]<strong class="caret"></strong></a>
                         <ul class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;">
                            <form action="login.php" method="post" accept-charset="UTF-8">
                               <input placeholder = "username"id="username" style="margin-bottom: 15px;" type="text" name="username" size="30" />
@@ -168,6 +188,20 @@
                             </form>
                          </div>
                       </li>
+                    </ul>
+                    <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-shopping-cart icon-white"></i>&nbsp;Cart<strong class="caret"></strong></a>
+                        <ul class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;">
+                        </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-star icon-white"></i>&nbsp;Starred<strong class="caret"></strong></a>
+                        <ul class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;">
+                        </ul>
+                        </li>
                     </ul>
                     <ul class="nav pull-right">
                     <li class="divider-vertical"></li>

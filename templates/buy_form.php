@@ -1,13 +1,13 @@
-            <div class="container">  
-                <div class="row">  
-                    <div class="span12">  
-                        <ul class="nav nav-tabs">  
-                            <li class="span5 active"><h3><a href="/buy.php">Buy</a></h3></li>   
-                            <li class = "span5"><h3><a href="/sell.php">Sell</a></h3></li>  
-                        </ul>  
-                    </div>  
-                </div>  
-            </div>
+<div class="container">  
+    <div class="row">  
+        <div class="span12">  
+            <ul class="nav nav-tabs">  
+                <li class="span5 active"><a href="/buy.php">Buy</a></li>   
+                <li class = "span5"><a href="/sell.php">Sell</a></li>  
+            </ul>  
+        </div>  
+    </div>  
+</div>
 
 <div id="centercontent">
     <legend id="welcomeuser" style="color:#000000">
@@ -17,29 +17,20 @@
         printf("\n");
         
         ?>
-        </legend>
-    
-    <h3 style="color:#000000;">Time to Buy!</h3>
-    </br>
-    <form action="https://www.googleapis.com/books/v1/volumes" method="get">
-        <input name="q" type="text"/>
-        <br/>
-        <input type="submit" value="Find Book"/>
-    </form>
-    <br>
-    <h4 style="color:#000000;">Pretend there's stuff here</h4>
+    </legend>
+    <h2 style="color:#000000;">Buy Books!</h2>
     </br><br>
-            <p style="color:#000000;">This is a filler paragraph</p>
-        <p style="color:#000000;">So is this</p>
-            <p style="color:#000000;">This is a filler paragraph</p>
-        <p style="color:#000000;">So is this</p>
-            <p style="color:#000000;">This is a filler paragraph</p>
-        <p style="color:#000000;">So is this</p>
-            <p style="color:#000000;">This is a filler paragraph</p>
-        <p style="color:#000000;">So is this</p>
-            <p style="color:#000000;">This is a filler paragraph</p>
-        <p style="color:#000000;">So is this</p>
-            <p style="color:#000000;">This is a filler paragraph</p>
-        <p style="color:#000000;">So is this</p>
+    <form action="buy_0.php" method="GET">
+        <fieldset>
+            <div class="row">
+            <div class="span6">
+            <div class="control-group ">
+                <input id="booksearch" autofocus name="booksearch" placeholder="Enter Class Name or Find your Book by Author, Title, or ISBN" type="text"/>
+            </div>
+            </div>
+            </div>
+        </fieldset>
+    </form>
+    </div>
 
 </div>
