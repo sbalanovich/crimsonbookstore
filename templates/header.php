@@ -19,7 +19,7 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script src="js/bootstrap.js"></script>
         <script src="js/scripts.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
         
         <style>
@@ -93,7 +93,7 @@
         height:64px;
         font-size:24px;
         text-align:center;
-        width:150%;
+        width:100%;
         }
         
         .messagebox{
@@ -170,7 +170,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </a>
-                  <a class="brand" href="catalogue.php"><img src="https://twimg0-a.akamaihd.net/profile_images/1163303038/Shield_RGB_Twitter.png" style="height:25px;width:25px;">Harvard Books</a>
+                  <a class="brand" href="catalogue.php"><img src="https://twimg0-a.akamaihd.net/profile_images/1163303038/Shield_RGB_Twitter.png" style="height:25px;width:25px;">Crimson Bookstore</a>
                   <!-- Start of the nav bar content -->
                   <div class="nav-collapse"><!-- Other nav bar content -->
                     <!-- The drop down menu -->
