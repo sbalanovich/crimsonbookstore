@@ -10,15 +10,15 @@
      **********************************************************************/
 
     // your database's name
-    define("DATABASE", "project");
+    define("DATABASE", "crimsonbookstore");
 
     // your database's password
-    define("PASSWORD", "crimson");
+    define("PASSWORD", "root");
 
     // your database's server
-    define("SERVER", "project");
+    define("SERVER", "localhost");
 
     // your database's username
-    define("USERNAME", "jharvard");
+    define("USERNAME", "root");
 
 ?>
