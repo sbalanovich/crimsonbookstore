@@ -1,14 +1,5 @@
 <?php
 
-	/****************************************************************************
-	 * sell.php
-	 *
-	 * Crimson Bookstore
-	 * Lauren Urke and Sergeui Balanovich
-	 *
-	 * Lets users sell books.
-	 ***************************************************************************/
-
     // configuration
     require("../includes/config.php");
     
@@ -38,9 +29,10 @@
 		$listing = query("INSERT INTO listings (book_id, user_id, price, book_condition, comments) VALUES (?, ?, ?, ?, ?)", $book_id, $_SESSION["id"], $_POST["price"], $_POST["condition"], $_POST["comments"]);
 
         // define message to show users
-        $message="You have successfully listed " . $_POST["title"] . " for sale. To edit this listing... You will be notified when users add this to their shopping cart.";
+        $message="You have successfully listed" + $_POST["title"] + "for sale. To edit this listing... You will be notified when users add this to their shopping cart.";
+
         // render sell
-        render("sell_form.php",array("title" => "Welcome to Crimson Bookstore!", "message"=> $message)); 
+        render("sell_form.php",array("title" => "Welcome to Crimson Bookstore!", "message"=>$message)); 
 
     }
     else 

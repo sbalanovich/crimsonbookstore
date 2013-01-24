@@ -3,8 +3,8 @@
     /***********************************************************************
      * constants.php
      *
-     * Crimson Bookstore
-     * Lauren Urke and Sergeui Balanovich
+     * Computer Science 50
+     * Problem Set 7
      *
      * Global constants.
      **********************************************************************/
