@@ -3,22 +3,22 @@
     /***********************************************************************
      * constants.php
      *
-     * Computer Science 50
-     * Problem Set 7
+     * Crimson Bookstore
+     * Lauren Urke and Sergeui Balanovich
      *
      * Global constants.
      **********************************************************************/
 
     // your database's name
-    define("DATABASE", "project");
+    define("DATABASE", "crimsonbookstore");
 
     // your database's password
-    define("PASSWORD", "crimson");
+    define("PASSWORD", "root");
 
     // your database's server
-    define("SERVER", "project");
+    define("SERVER", "localhost");
 
     // your database's username
-    define("USERNAME", "jharvard");
+    define("USERNAME", "root");
 
 ?>
