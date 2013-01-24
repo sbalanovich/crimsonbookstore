@@ -1,4 +1,4 @@
-<div class="container">  
+<div class="secondnav">  
     <div class="row">  
         <div class="span12">  
             <ul class="nav nav-tabs">  

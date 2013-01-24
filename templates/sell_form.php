@@ -1,12 +1,10 @@
 <div class="secondnav">  
-    <div class="row">  
-        <div class="span12">  
+  
             <ul class="nav nav-tabs">  
                 <li class="span5"><a href="/buy.php">Buy</a></li>   
                 <li class = "span5 active"><a href="/sell.php">Sell</a></li>  
             </ul>  
-        </div>  
-    </div>  
+
 </div>
 
 <div id="centercontent">
