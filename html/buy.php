@@ -1,14 +1,5 @@
 <?php
 
-	/****************************************************************************
-	 * buy.php
-	 *
-	 * Crimson Bookstore
-	 * Lauren Urke and Sergeui Balanovich
-	 *
-	 * Lets user buy books.
-	 ***************************************************************************/
-
     // configuration
     require("../includes/config.php");
     
