@@ -4,30 +4,28 @@
     require("../includes/config.php");
     
     // if form was submitted
-    if (isset($_POST['sellformsubmit']))
+    //if (isset($_POST['sellformsubmit'])))
     {
-
-        //check if book is in database, insert if not
-        $insertbook=query("INSERT INTO books (title, author, publisher, isbn13) VALUES (?, ?, ?, ?)", $_POST["title"], $_POST["authors"], $_POST["publisher"], $_POST["isbn13"]);
-        if ($insertbook === false) {
-            apologize("Unable to insert book into books");
+        /*// validate submission do this with jquery
+        if (empty($_POST["username"]))
+        {
+            apologize("You must provide your username.");
         }
+        else if (empty($_POST["password"]))
+        {
+            apologize("You must provide your password.");
+        }*/
 
-		/*//insert listing into database
-		$listing = array();
-        $_POST["price"];
-		$_POST["condition"];
-		$_POST["description"];
+        //insert book and listing into database
+      //  listing=array();
+       // $_POST["price"]
 
-
-        // define message to show users */
-        
 
         // render sell
-        render("sell_form.php",array("title" => "Welcome to Crimson Bookstore!")); 
+       // render("sell_form.php",array("title" => "Welcome to Crimson Bookstore!"));
 
     }
-    else 
+   // else
     {
         // render sell
     	render("sell_form.php", array("title" => "Welcome to Crimson Bookstore!"));
