@@ -27,7 +27,7 @@
         {
 	    font: 11px/24px Verdana, Arial, Helvetica, sans-serif;
 	    border-collapse: collapse;
-	    width: 1000px;
+	    width: 1700px;
 	    margin: auto;
 	    }
 

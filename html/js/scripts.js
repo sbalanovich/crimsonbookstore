@@ -10,7 +10,7 @@
 $(document).ready( function () {
     $("input#booksearch").change( function() {
         var input = $('input#booksearch').val();
-        
+        var count = 0;
         var div = '<div>'
         var table = '<table id = "results" style="color:#000000; padding:15px;" class="table table-hover" data-provides="rowlink"><thead><tr>'
         var pic = '<th></th>'
@@ -29,11 +29,25 @@ $(document).ready( function () {
                 $("thead").after(data);
                 
                 $("#results tbody tr").click( function() {
-                    var bookid = $(this).attr("id");
-                    $.post('ajax/listtbl.php', {bookid: bookid}, function(data) {
-                        
-                        $('tr#' + bookid).after(data);
-
+                    var bookid = $(this).attr("id");                    
+                    $.post('ajax/listtbl.php', {bookid: bookid}, function(data) {                        
+                        if (count % 2 === 0)
+                        {
+                            if (count === 0)
+                            {
+                                $('tr#' + bookid).after(data);
+                            }
+                            
+                            else
+                            {
+                                $('table#' + bookid).show();
+                            }
+                        }
+                        else
+                        {
+                            $('table#' + bookid).hide();
+                        }
+                        count++;
                      });
                 }); 
             });

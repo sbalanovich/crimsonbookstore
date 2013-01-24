@@ -4,7 +4,7 @@
         require '../db/connect.php';
         $query = mysql_query("SELECT * FROM listings WHERE (`book_id` = " . $_POST['bookid'] . ")");            
         
-        echo('<tr><td colspan = 4><table id = ' . $_POST['bookid'] . ' style="color:#000000; padding:15px;" class="table table-hover">');
+        echo('<tr><td colspan = 4><table id = ' . $_POST['bookid'] . ' style="color:#000000; padding:15px;"  width = "90%">');
         if (mysql_num_rows($query) !== 0)
         {               
                 while($results = mysql_fetch_array($query))
