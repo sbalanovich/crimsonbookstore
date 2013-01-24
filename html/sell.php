@@ -22,8 +22,9 @@
         if($isbookneeded === false) {
         	apologize("Unable to look for this book in books");
         }
+        $class_id=1; //need to query
         if(empty($isbookneeded)) {
-			$insertbook=query("INSERT INTO books (title, author, publisher, picture, description, isbn10, isbn13) VALUES (?, ?, ?, ?, ?, ?, ?)", $_POST["title"], $_POST["authors"], $_POST["publisher"], $_POST["pic"], $_POST["description"], $_POST["isbn10"], $_POST["isbn13"]);
+			$insertbook=query("INSERT INTO books (title, author, publisher, class_id, required, picture, description, isbn10, isbn13) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", $_POST["title"], $_POST["authors"], $_POST["publisher"], $class_id, $_POST["required"], $_POST["pic"], $_POST["description"], $_POST["isbn10"], $_POST["isbn13"]);
 	        if ($insertbook === false) {
 	            apologize("Unable to insert book into books");
 	        }

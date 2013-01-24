@@ -1,4 +1,4 @@
-<div class="container">  
+<div class="secondnav">  
     <div class="row">  
         <div class="span12">  
             <ul class="nav nav-tabs">  
@@ -29,6 +29,8 @@ make the page still searchable once form is clicked -->
         <div id="sellformpreset">
         </div>
         <form id="sellform" name="sellform" method="post" action="sell.php">   <?php //todo validate ?>
+            <input name="class" placeholder="Course" type="text"/>
+            <input type="checkbox" name="required" value="required">Required Text?<br>
             <input name="price" placeholder="List your price" type="float"/>
             <select name="condition" class="input-large" size="1">
                 <option value="" class="uneditable-input" selected="selected">Condition</option>
