@@ -20,7 +20,7 @@
         <script src="js/bootstrap.js"></script>
         <script src="js/scripts.js"></script>
         <script src="js/sell_formjs.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script
 
     </head>
 
