@@ -12,12 +12,7 @@
 <div id="centercontent">
     <div>
         <input id="booksearchinput" name="booksearch" placeholder="Search by Title, Author, or ISBN" type="text"/>
-        <button id="sellsearchsubmit" class="btn">Search</button> </br>
-        <?php if($message != 0) 
-                { //HELPPPPP!
-                    echo $message;
-                } ?>
-
+        <button id="sellsearchsubmit" class="btn">Search</button>
         <script> $(document).ready(function() {
             //turn off form
             $('#sellform').toggle();
@@ -55,31 +50,7 @@
                     else {
                         books[i]["publisher"]="No Publisher Available";
                     }
-                    //description
-                    if (json.items[i].volumeInfo.description) {
-                        books[i]["description"]=json.items[i].volumeInfo.description;
-                    }
-                    else {
-                        books[i]["description"]="No Description Available";
-                    }
-                    //isbn10
-                    if (json.items[i].volumeInfo.industryIdentifiers) {
-                        if (json.items[i].volumeInfo.industryIdentifiers[0]) {
-                            if (json.items[i].volumeInfo.industryIdentifiers[0].type === "ISBN_10") {
-                               books[i]["isbn10"]=json.items[i].volumeInfo.industryIdentifiers[0].identifier;
-                            }
-                            else {
-                                books[i]["isbn10"]="No ISBN Available";
-                            }
-                        }
-                        else {
-                            books[i]["isbn10"]="No ISBN Available";
-                        }
-                    }
-                    else {
-                        books[i]["isbn10"]="No ISBN Available";
-                    }  
-                    //isbn13
+                    //isbn
                     if (json.items[i].volumeInfo.industryIdentifiers) {
                         if (json.items[i].volumeInfo.industryIdentifiers[1]) {
                             if (json.items[i].volumeInfo.industryIdentifiers[1].type === "ISBN_13") {
@@ -96,16 +67,15 @@
                     else {
                         books[i]["isbn13"]="No ISBN Available";
                     }  
-                    //pic
+                    //thumbnail
                     if (json.items[i].volumeInfo.imageLinks) {
                         books[i]["pic"]=json.items[i].volumeInfo.imageLinks.thumbnail;
                     }
                     else {
                         books[i]["pic"]="http://www.myworldhut.com/product_images/u/book_image_not_available__14165.jpg";
                     }
-                    //put search results into element, creating divs for each
-                    $("<div class='sellresult' id='" + i + "'> <img src='" + books[i]["pic"] + "' alt='book image'> <ol> <li>" + books[i]["title"] + " </li> <li>" + books[i]["authors"] + " </li> <li>" + books[i]["publisher"] + " </li> <li>" + books[i]["description"] + " </li> <li>" + books[i]["isbn10"] + " </li> <li>" + books[i]["isbn13"] + " </li> </ol> </div>").appendTo('#sellsearchresults');
-                    
+                    //put search results into element
+                    $('<div class="sellresult" id=' + i + '>' + books[i]["authors"] + '</div>').appendTo('#sellsearchresults');
                 }
                 //toggle off search results, toggle on form, put defined info into form
                 $('#sellsearchresults').on('click', '.sellresult', function() {
@@ -115,21 +85,24 @@
                     $("<input class='preset' name='title' value='" + books[id]["title"] + ": " + books[id]["subtitle"] + "' readonly>").prependTo('#sellform'); 
                     $("<input class='preset' name='authors' value='" + books[id]["authors"] + "' readonly>").prependTo('#sellform'); 
                     $("<input class='preset' name='publisher' value='" + books[id]["publisher"] + "' readonly>").prependTo('#sellform'); 
-                    $("<input class='preset' name='description' value='" + books[id]["description"] + "' readonly>").prependTo('#sellform'); 
-                    $("<input class='preset' name='pic' value='" + books[id]["pic"] + "' readonly>").prependTo('#sellform'); 
-                    $("<input class='preset' name='isbn10' value='" + books[id]["isbn10"] + "' readonly>").prependTo('#sellform'); 
                     $("<input class='preset' name='isbn13' value='" + books[id]["isbn13"] + "' readonly>").prependTo('#sellform'); 
                     $('input.preset').toggle();
 
-                    $("<img src='" + books[id]["pic"] + "' alt='book image'> <ol> <li>" + books[id]["title"] + " </li> <li>" + books[id]["authors"] + " </li> <li>" + books[id]["publisher"] + " </li> <li>" + books[id]["description"] + " </li> <li>" + books[id]["isbn10"] + " </li> <li>" + books[id]["isbn13"] + " </li> </ol> ").prependTo('#sellformdiv');
+                    $("<li>" + books[id]["isbn13"] + " </li>").prependTo('#presetform');
+                    $("<li>" + books[id]["publisher"] + " </li>").prependTo('#presetform');
+                    $("<li>" + books[id]["authors"] + " </li>").prependTo('#presetform');
+                    $("<li>" + books[id]["title"] + " </li>").prependTo('#presetform');
+                    $("<img src='" + books[id]["pic"] + "' alt='book image'>").prependTo('#presetform');
                 });
             });
         });
         </script>
     </div>
-    <div id="sellsearchresults">      
+    <div id="sellsearchresults">
     </div>
     <div id="sellformdiv">
+        <ol id="presetform">
+        </ol>
         <form id="sellform" name="sellform" method="post" action="sell.php">
             <input name="price" placeholder="List your price" type="float"/>
             <select name="condition" class="input-large" size="1">
