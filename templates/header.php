@@ -93,7 +93,7 @@
         height:64px;
         font-size:24px;
         text-align:center;
-        width:150%;
+        width:100%;
         }
         
         .messagebox{
