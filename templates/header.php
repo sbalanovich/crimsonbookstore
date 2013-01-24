@@ -19,200 +19,53 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script src="js/bootstrap.js"></script>
         <script src="js/scripts.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-
-        
-        <style>
-        table 
-        {
-	    font: 11px/24px Verdana, Arial, Helvetica, sans-serif;
-	    border-collapse: collapse;
-	    width: 1700px;
-	    margin: auto;
-	    }
-
-        th 
-        {
-	    padding: 0 0.5em;
-	    text-align: center;
-	    }
-	    
-	    th+th 
-        {
-	    border-left: 1px solid #CCC;
-	    text-align: center;
-	    }
-
-        tr.yellow td 
-        {
-	    border-top: 1px white;
-	    border-bottom: 1px white;
-	    background: #FFC;
-	    }
-
-        td 
-        {
-	    border-bottom: 1px white;
-	    padding: 0 0.5em;
-	    width:100px;
-	    }
-        
-        td+td 
-        {
-	    border-left: 1px solid #CCC;
-	    text-align: center;
-	    }
-	    
-	    #cover
-	    {
-	    padding: 15px;
-	    height: 250px;
-	    width: 200px;
-	    }
-	    
-	    #welcomeusername
-	    {
-	    text-align: center;
-	    }
-	    
-	    #publisher
-	    {
-	    font-size:11px;
-	    text-align:left;
-	    }
-	    
-	    #carcat
-	    {
-	    height: 540px;
-	    width: 1080px;
-	    }
-	    
-        
-        #booksearch
-        {
-        height:64px;
-        font-size:24px;
-        text-align:center;
-        width:100%;
-        }
-        
-        .messagebox{
-         position:absolute;
-         width:100px;
-         margin-left:30px;
-         border:1px solid #c93;
-         background:#ffc;
-         padding:3px;
-        }
-        
-        .messageboxok{
-         position:absolute;
-         width:auto;
-         margin-left:30px;
-         border:1px solid #349534;
-         background:#C9FFCA;
-         padding:3px;
-         font-weight:bold;
-         color:#008000;
-        }
-        
-        .messageboxerror{
-         position:absolute;
-         width:auto;
-         margin-left:30px;
-         border:1px solid #CC0000;
-         background:#F7CBCA;
-         padding:3px;
-         font-weight:bold;
-         color:#CC0000;
-        }
-
-	    .arrow_box {
-	        position: relative;
-	        background: #731515;
-	        border: 4px solid #c2e1f5;
-        }
-        .arrow_box:after, .arrow_box:before {
-	        top: 100%;
-	        border: solid transparent;
-	        content: " ";
-	        height: 0;
-	        width: 0;
-	        position: absolute;
-	        pointer-events: none;
-        }
-
-        .arrow_box:after {
-	        border-color: rgba(115, 21, 21, 0);
-	        border-top-color: #731515;
-	        border-width: 30px;
-	        left: 50%;
-	        margin-left: -30px;
-        }
-        .arrow_box:before {
-	        border-color: rgba(194, 225, 245, 0);
-	        border-top-color: #c2e1f5;
-	        border-width: 36px;
-	        left: 50%;
-	        margin-left: -36px;
-        }
-	    </style>
+        <script src="js/sell_formjs.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
     </head>
 
     <body style="background-color:	#7D0000; overflow:auto;"> 
-
-         <div class="navbar">
-              <div class="navbar-inner">
-                  <div class="container">
-                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </a>
-                  <a class="brand" href="catalogue.php"><img src="https://twimg0-a.akamaihd.net/profile_images/1163303038/Shield_RGB_Twitter.png" style="height:25px;width:25px;">Harvard Books</a>
-                  <!-- Start of the nav bar content -->
-                  <div class="nav-collapse"><!-- Other nav bar content -->
-                    <!-- The drop down menu -->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="sell.php"><img src="https://twimg0-a.akamaihd.net/profile_images/1163303038/Shield_RGB_Twitter.png" style="height:25px;width:25px;">Crimson Bookstore</a>
+                    <div class="nav-collapse"></div>
                     <ul class="nav pull-right">
-                    <li class="divider-vertical"></li>
-                      <li class="dropdown">
-                        <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-th-list icon-white"></i>&nbsp;[User's Name Here]<strong class="caret"></strong></a>
-                        <ul class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;">
-                           <form action="login.php" method="post" accept-charset="UTF-8">
-                              <input placeholder = "username"id="username" style="margin-bottom: 15px;" type="text" name="username" size="30" />
-                              <input placeholder="password"id="password" style="margin-bottom: 15px;" type="password" name="password" size="30" />
-                              <input id="user_remember_me" style="float: left; margin-right: 10px;" type="checkbox" name="remember_me" value="1" />
-                              <label class="string optional" for="user_remember_me">Remember me</label>                             
-                              <input class="btn btn-primary" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Sign In" />
-                            </form>
-                         </div>
-                      </li>
-                    </ul>
-                    <ul class="nav pull-right">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-shopping-cart icon-white"></i>&nbsp;Cart<strong class="caret"></strong></a>
-                        <ul class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;">
-                        </ul>
+                        <li class="divider-vertical"></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-user icon-white"></i>&nbsp;[User's Name Here]<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;">
+                                <li> Insert Links Here </li>
+                                <li> Report Bug </Li>
+                                <li> Feedback </Li>
+                                <li> Feature Request </li>
+                                <li> Log Out </li>
+                            </ul>
                         </li>
                     </ul>
                     <ul class="nav pull-right">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-star icon-white"></i>&nbsp;Starred<strong class="caret"></strong></a>
-                        <ul class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;">
-                        </ul>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-shopping-cart icon-white"></i>&nbsp;Cart<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;"></ul>
                         </li>
                     </ul>
                     <ul class="nav pull-right">
-                    <li class="divider-vertical"></li>
-                    <a class="btn btn-inverse" href="buy_0.php" id="navbtn"> Search </a>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-star icon-white"></i>&nbsp;Starred<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;"></ul>
+                        </li>
                     </ul>
-                  </div>
+                    <ul class="nav pull-right" >
+                        <li class="divider-vertical"></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-list icon-white"></i>&nbsp;Listings<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;"></ul>
+                        </li>  
+                    </ul>
                 </div>
-              </div>
             </div>
+        </div>
 
         <div class="container-fluid">
-
             <div id="middle">
 
