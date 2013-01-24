@@ -1,3 +1,6 @@
+var ajaxRequest = null;
+
+
 $(document).ready(function() {
     //turn off form when page loads
     $('#sellformdiv').hide();
@@ -12,6 +15,7 @@ $(document).ready(function() {
         $('#sellformdiv').hide();
         // AJAX using jQuery
         var responseCallback = function(json, successString) {
+
             //var json = JSON.parse(responseText);
             //parse response
             for(var i=0; i < json.items.length; i++) {
@@ -89,12 +93,28 @@ $(document).ready(function() {
             });
         };
         var query= $('#booksearchinput').val();    
-        $.get("https://www.googleapis.com/books/v1/volumes?q=" + query + "&maxResults=20", responseCallback);
+    if (ajaxRequest != null)
+    {
+        ajaxRequest.abort();
+    }
+    ajaxRequest = $.ajax({
+        url: "https://www.googleapis.com/books/v1/volumes?q=" + query + "&maxResults=20", 
+        method: "GET", 
+        success: responseCallback, 
+        error: function(a, why) {
+            if (why != "abort") {
+                // handle error here
+            }
+        }
+    });
+
     };
-    /*var enterHandler = function(e) {
+    var enterHandler = function(e) {
          if ((e.keycode && e.keycode == 13) || (e.which && e.which == 13))
              ajaxHandler(); 
-    }; */
+    };
     $('#sellsearchsubmit').click(ajaxHandler);
-    $('#booksearchinput').on('keyup', ajaxHandler);
+    $('#booksearchinput').on('keyup', enterHandler);
 }); 
+
+
