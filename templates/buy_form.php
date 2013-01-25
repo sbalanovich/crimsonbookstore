@@ -13,6 +13,8 @@
 
 .invisible {
     display:none;
+    }
+    
 }
 
 </style>
