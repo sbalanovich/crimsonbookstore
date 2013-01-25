@@ -18,7 +18,7 @@
                     $author = $results['author'];
                     $title = $results['title'];
                     $isbn = $results['ISBN-10'];
-                    echo("<tr class = \"result\" id = " . $id . ">");
+                    echo("<tr class = \"result\" id = book_" . $id . ">");
                     echo("<td style=\"text-align:center;\">LOL</td>");                    
                     echo("<td style=\"text-align:center;\"><h5>" . $author . "</h5></td>");
                     echo("<td style=\"text-align:center;\"><h5>" . $title . "</h5></a></td>");
