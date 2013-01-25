@@ -7,7 +7,10 @@
  * Global JavaScript, if any.
  **********************************************************************/
 
+// Fire jQuery only when document ready
 $(document).ready( function () {
+
+    //if there is a change in the search bar
     $("input#booksearch").change( function() {
         var input = $('input#booksearch').val();
         var count = 0;
@@ -31,25 +34,32 @@ $(document).ready( function () {
                 $("#results tbody tr").click( function() {
                     var bookid = $(this).attr("id");                    
                     $.post('ajax/listtbl.php', {bookid: bookid}, function(data) {                        
-                        if (count % 2 === 0)
-                        {
                             if (count === 0)
                             {
                                 $('tr#' + bookid).after(data);
                             }
+                            $('#book_' + bookid).toggleClass('invisible');
+                            count = 1;
                             
-                            else
-                            {
-                                $('table#' + bookid).show();
-                            }
-                        }
-                        else
-                        {
-                            $('table#' + bookid).hide();
-                        }
-                        count++;
-                     });
-                }); 
+                            $("#listings tbody tr td").click( function() {
+                                var listid = $(this).attr("id");
+                                var id = listid.slice(5);
+                                
+                                if (listid !== '')
+                                {
+                                    if (listid === 'star_'+id)
+                                    {
+                                        alert("you starred listing " + id + "!");
+                                    }
+                                    else
+                                    {
+                                        alert("you carted listing " + id + "!");
+                                    }
+                                }
+                            });
+                    });
+                                                          
+                });  
             });
         }
 
