@@ -14,7 +14,8 @@ body {
   background-color: #7D0000;
   overflow: auto; }
 
-#navbar-inner ul li .dropdown-menu {
+#navbar-inner ul li text
+.dropdown-menu {
   padding: 15px;
   padding-bottom: 15px; }
 
@@ -36,7 +37,7 @@ body {
   -moz-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.7), inset 0 1px rgba(255, 255, 255, 0.34);
   -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.7), inset 0 1px rgba(255, 255, 255, 0.34); }
 
-#footer #bottom {
+#bottom {
   font-size: smaller;
   margin: 20px;
   text-align: center;
@@ -69,7 +70,7 @@ body {
 table {
   font: 11px/24px Verdana, Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 1000px;
+  width: 1700px;
   margin: auto; }
 
 th {

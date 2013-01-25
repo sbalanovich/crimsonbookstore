@@ -45,20 +45,32 @@
                 <ul class="nav pull-right">
                     <li class="dropdown">
                         <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-shopping-cart icon-white"></i>&nbsp;Cart<strong class="caret"></strong></a>
-                        <ul class="dropdown-menu"></ul>
+                        <ul class="dropdown-menu">
+                            <li> Most recent list </li>
+                            <li> recent list </Li>
+                            <li> recent list </Li>
+                        </ul>
                     </li>
                 </ul>
                 <ul class="nav pull-right">
                     <li class="dropdown">
                         <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-star icon-white"></i>&nbsp;Starred<strong class="caret"></strong></a>
-                        <ul class="dropdown-menu" ></ul>
+                        <ul class="dropdown-menu" >
+                            <li> Most recent list </li>
+                            <li> recent list </Li>
+                            <li> recent list </Li>
+                        </ul>
                     </li>
                 </ul>
                 <ul class="nav pull-right" >
                     <li class="divider-vertical"></li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-list icon-white"></i>&nbsp;Listings<strong class="caret"></strong></a>
-                        <ul class="dropdown-menu" ></ul>
+                        <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-list icon-white"></i>&nbsp;My Listings<strong class="caret"></strong></a>
+                        <ul class="dropdown-menu" >
+                            <li> Most recent list </li>
+                            <li> recent list </Li>
+                            <li> recent list </Li>
+                        </ul>
                     </li>  
                 </ul>
             </div>
