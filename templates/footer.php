@@ -3,8 +3,8 @@
             
             <br/>
 
-            <div class="container">
-            <div class="centercontent" style="color:#000000; padding:15px;" id="bottom">
+            <div id="bottom">
+            <div id="copyright">
                 Copyright &#169; Lauren Urke, Sergei Balanovich
             </div>
             </div>
