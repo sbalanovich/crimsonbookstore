@@ -9,10 +9,11 @@
 @import "mixins";
 
 head {
-
+  margin: 0px;
 }
 
 body{
+  margin: 0px;
   background-color: #7D0000; 
   overflow:auto;
 }
@@ -43,44 +44,54 @@ body{
 
 #centercontent
 {
-background: #FFFFFF; 
-overflow:auto; 
-padding-left:30px; 
-padding-right:30px;
-padding-bottom:30px;
- -moz-box-shadow:    3px 3px 5px 6px #000000;
-  -webkit-box-shadow: 0px 0px 5px 6px #000000;
-  box-shadow:         -1px 6px 5px 6px #000000;
+  background: #FFFFFF; 
+  overflow:auto; 
+  padding-left:30px; 
+  padding-right:30px;
+  padding-bottom:30px;
+  @include box-shadow(0 3px 12px rgba(0, 0, 0, 0.7), inset 0 1px rgba(255, 255, 255, 0.34));
+}
+
+#sellsearchbar{
+
+}
+
+#message
+{
+  background: #FFFFFF; 
+  overflow:auto; 
+  padding:1px;
+  @include box-shadow(0 3px 12px rgba(0, 0, 0, 0.7), inset 0 1px rgba(255, 255, 255, 0.34));
+}
+
+#sellsearchresults {
+
+}
+
+#sellformdiv {
+  #sellformpreset {
+
+  }
+  #sellform {
+
+  }
 }
 
 
-#bottom
-{
-    /* shrink bottom's font size */
-    font-size: smaller;
-
-    /* surround with whitespace */
-    margin: 20px;
-
-    /* center contents */
-    text-align: center;
-}
-
-
-.message
-{
-background: #FFFFFF; 
-overflow:auto; 
-padding:1px;
- -moz-box-shadow:    3px 3px 5px 6px #000000;
-  -webkit-box-shadow: 0px 0px 5px 6px #000000;
-  box-shadow:         -1px 6px 5px 6px #000000;
+#footer {
+  #bottom
+  {
+      font-size: smaller;
+      margin: 20px;
+      text-align: center;
+      color:#000000; padding:15px;
+  }
 }
 
 #welcomeuser
 {
-padding:15px;
-color:#FFFFFF;
+  padding:15px;
+  color:#FFFFFF;
 }
 
 ::-webkit-scrollbar {
@@ -107,49 +118,47 @@ color:#FFFFFF;
 
 table 
 {
-font: 11px/24px Verdana, Arial, Helvetica, sans-serif;
-border-collapse: collapse;
-width: 1000px;
-margin: auto;
+  font: 11px/24px Verdana, Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 1000px;
+  margin: auto;
 }
 
 th 
 {
-padding: 0 0.5em;
-text-align: center;
-}
-
-th+th 
-{
-border-left: 1px solid #CCC;
-text-align: center;
+  padding: 0 0.5em;
+  text-align: center;
+  th {
+    border-left: 1px solid #CCC;
+    text-align: center;
+  }
 }
 
 tr.yellow td 
 {
-border-top: 1px white;
-border-bottom: 1px white;
-background: #FFC;
+  border-top: 1px white;
+  border-bottom: 1px white;
+  background: #FFC;
 }
 
 td 
 {
-border-bottom: 1px white;
-padding: 0 0.5em;
-width:100px;
+  border-bottom: 1px white;
+  padding: 0 0.5em;
+  width:100px;
+  td {
+    border-left: 1px solid #CCC;
+    text-align: center;
+  }
 }
 
-td+td 
-{
-border-left: 1px solid #CCC;
-text-align: center;
-}
+/* UNNECESSARY
 
 .arrow_box {
     position: relative;
     background: #731515;
     border: 4px solid #c2e1f5;
-}
+} 
 .arrow_box:after, .arrow_box:before {
     top: 100%;
     border: solid transparent;
@@ -173,12 +182,8 @@ text-align: center;
     border-width: 36px;
     left: 50%;
     margin-left: -36px;
-}
+} 
 
-
-
-//unneeded I believe
-/*
 .container
 {
     margin-left: auto;
