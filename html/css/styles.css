@@ -14,10 +14,37 @@ body {
   background-color: #7D0000;
   overflow: auto; }
 
-#navbar-inner ul li text
-.dropdown-menu {
-  padding: 15px;
-  padding-bottom: 15px; }
+.navbar {
+  display: block;
+  margin-bottom: 20px;
+  overflow: visible;
+  color: #777777; }
+  .navbar .brand {
+    text-shadow: 0px 2px 1px #222222;
+    color: rgba(255, 255, 255, 0.75); }
+    .navbar .brand:hover {
+      text-shadow: 0px -1px 2px #222222; }
+    .navbar .brand:active {
+      text-shadow: 0px -1px 2px #222222; }
+  .navbar .navbar-inner .nav li a {
+    text-shadow: 0px 2px 1px #222222;
+    color: rgba(255, 255, 255, 0.75); }
+    .navbar .navbar-inner .nav li a:hover {
+      text-shadow: 0px -1px 2px #222222; }
+    .navbar .navbar-inner .nav li a:active {
+      text-shadow: 0px -1px 2px #222222; }
+  .navbar .navbar-inner .nav li.dropdown.open .dropdown-toggle {
+    background-color: rgba(255, 255, 255, 0);
+    text-shadow: 0px -2px 0px #222222;
+    color: rgba(255, 255, 255, 0.75); }
+  .navbar .navbar-inner .nav ul {
+    background-image: url("../img/lightgrey.jpg");
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 1px rgba(255, 255, 255, 0.34);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 1px rgba(255, 255, 255, 0.34);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 1px rgba(255, 255, 255, 0.34);
+    border: none; }
+    .navbar .navbar-inner .nav ul li {
+      margin: 5px; }
 
 #centercontent {
   background: #FFFFFF;
