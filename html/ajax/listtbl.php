@@ -17,7 +17,9 @@
                     while($starresults = mysql_fetch_array($starquery))
                     {
                         if (1 == $starresults['user_id'])
-                        $starred = true;
+                        {
+                            $starred = true;
+                        }
                     }
                     
                     $cartquery = mysql_query("SELECT * FROM user_cart WHERE (`listing_id` = " . $_POST['bookid'] . ")");

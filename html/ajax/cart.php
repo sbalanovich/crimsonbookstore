@@ -7,7 +7,7 @@
         $user_id = 1;
         
         
-        if (is_carted == 1)
+        if ($_POST['is_carted'] == 1)
         {
             $query = mysql_query("INSERT INTO user_cart (listing_id, user_id) VALUES ('" . $list_id . "', '" . $user_id . "')") or die(mysql_error());
         }

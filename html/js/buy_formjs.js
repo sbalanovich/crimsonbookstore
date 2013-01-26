@@ -39,7 +39,8 @@ $(document).ready( function () {
                 
 
                     var tableid = $(this).attr("id");
-                    var bookid = tableid.slice(5, tableid.length);                   
+                    var bookid = tableid.slice(5, tableid.length);
+                    console.log(bookid);                  
                     $('#listbook_' + bookid).toggleClass('invisible');
                     
                     
@@ -62,10 +63,10 @@ $(document).ready( function () {
                             $("#listings tbody tr td").on('click', function() {
                                 var listid = $(this).attr("id");
                                 var id = listid.slice(5, listid.length);
-                                $("#"+listid).toggleClass("icon-white");
+                                $("#"+listid + " i").toggleClass("icon-white");
                                     if (listid === 'star_'+id)
                                     {
-                                        if ($('#'+listid).hasClass("icon-white"))
+                                        if ($("#"+listid + " i").hasClass("icon-white"))
                                         {
                                             $.post('ajax/star.php', {listid: id, is_starred: 1}, function(data) {
                                                 alert("you starred listing " + id);
@@ -80,15 +81,15 @@ $(document).ready( function () {
                                     }
                                     else if (listid === 'cart_'+id)
                                     {
-                                        if ($('#'+listid).hasClass("icon-white"))
+                                        if ($("#"+listid + " i").hasClass("icon-white"))
                                         {
-                                            $.post('ajax/cart.php', {listid: id, is_starred: 1}, function(data) {
+                                            $.post('ajax/cart.php', {listid: id, is_carted: 1}, function(data) {
                                                 alert("you carted listing " + id);
                                             });
                                         }
                                         else
                                         {
-                                             $.post('ajax/cart.php', {listid: id, is_starred: 0}, function(data) {
+                                             $.post('ajax/cart.php', {listid: id, is_carted: 0}, function(data) {
                                                 alert("you UNcarted listing " + id);
                                             });
                                         }
