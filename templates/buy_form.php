@@ -1,4 +1,4 @@
-<div class="secondnav">  
+<div class="container">  
     <div class="row">  
         <div class="span12">  
             <ul class="nav nav-tabs">  
@@ -8,6 +8,14 @@
         </div>  
     </div>  
 </div>
+
+<style>
+
+.invisible {
+    display:none;
+}
+
+</style>
 
 <div id="centercontent">
     <legend id="welcomeuser" style="color:#000000">
@@ -20,17 +28,14 @@
     </legend>
     <h2 style="color:#000000;">Buy Books!</h2>
     </br><br>
-    <form action="buy_0.php" method="GET">
         <fieldset>
-            <div class="row">
-            <div class="span6">
-            <div class="control-group ">
-                <input id="booksearch" autofocus name="booksearch" placeholder="Enter Class Name or Find your Book by Author, Title, or ISBN" type="text"/>
-            </div>
-            </div>
+            <div class="row span6 control-group">
+                <input id="booksearch" placeholder="Enter Class Name or Find your Book by Author, Title, or ISBN" type="text"/>
             </div>
         </fieldset>
-    </form>
-    </div>
+        
+        <div id="resultstable">
 
+        </div>
 </div>
+
