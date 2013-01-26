@@ -4,6 +4,8 @@ var ajaxRequest = null;
 $(document).ready(function() {
     //turn off form when page loads
     $('#sellformdiv').hide();
+
+
     //query google books api on button clicked
     var books = {};
     var ajaxHandler = function() {
