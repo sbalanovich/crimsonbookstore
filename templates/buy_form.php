@@ -1,33 +1,18 @@
-<div class="container">  
-    <div class="row">  
-        <div class="span12">  
-            <ul class="nav nav-tabs">  
-                <li class="span5 active"><a href="/buy.php">Buy</a></li>   
-                <li class = "span5"><a href="/sell.php">Sell</a></li>  
-            </ul>  
-        </div>  
-    </div>  
+
+<div id="pill-bar">
+    <ul><li id="buy" class="active"><a href="/buy.php">Buy</a></li><li id="sell" class="inactive"><a href="/sell.php">Sell</a></li></ul>
 </div>
+<div id="pill-content">
+    <div id="centercontent">
+
 
 <style>
 
 .invisible {
     display:none;
-    }
-    
 }
 
 </style>
-
-<div id="centercontent">
-    <legend id="welcomeuser" style="color:#000000">
-        <?php
-
-        print("Welcome, [INSERT USERNAME HERE].");
-        printf("\n");
-        
-        ?>
-    </legend>
     <h2 style="color:#000000;">Buy Books!</h2>
     </br><br>
         <fieldset>
@@ -39,5 +24,6 @@
         <div id="resultstable">
 
         </div>
+</div>
 </div>
 
