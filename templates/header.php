@@ -77,5 +77,4 @@
         </div>
 
         <div id="mainpage">
-            <div id="middle">
-
+                <div id="centercontent">             

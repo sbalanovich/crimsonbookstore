@@ -14,13 +14,13 @@ head {
 
 body{
   margin: 0px;
-  background-color: #7D0000; 
+  background-color: #D1D1D1; 
   overflow:auto;
 }
 
 .navbar{
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   overflow: visible;
   color: #777777;
   .brand {
@@ -141,7 +141,29 @@ body{
     }
   }
 }
- 
+
+
+
+#buy_centercontent
+{
+  background-image: url(../img/white_carbonfiber.png);
+  opacity:0.95;
+  filter:alpha(opacity=92); /* For IE8 and earlier */
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow:auto;
+  padding-top:45px;
+  padding-left:45px; 
+  padding-right:30px;
+  padding-bottom:30px;
+  @include box-shadow(0 3px 12px rgba(0, 0, 0, 0.7), inset 0 1px rgba(255, 255, 255, 0.34));
+}
+#buy_centercontent:hover
+{
+    opacity:0.97;
+    filter:alpha(opacity=95); /* For IE8 and earlier */
+}
+
  /* Style of pill Content */
 #pill-content {
   padding: 0px 0px 0px 0px;
@@ -362,14 +384,6 @@ body{
 	background: #ffffff; 
 }
 
-table 
-{
-  font: 11px/24px Verdana, Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 1700px;
-  margin: auto;
-}
-
 th 
 {
   padding: 0 0.5em;
@@ -393,7 +407,6 @@ td
   padding: 0 0.5em;
   width:100px;
   td {
-    border-left: 1px solid #CCC;
     text-align: center;
   }
 }

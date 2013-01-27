@@ -4,15 +4,14 @@
         require '../db/connect.php';
         
         $list_id = $_POST['listid'];
-        $user_id = 1;
+        $user_id = 1;        
         
-        
-        if (is_carted == 1)
+        if ($_POST['is_carted'] == 1)
         {
             $query = mysql_query("INSERT INTO user_cart (listing_id, user_id) VALUES ('" . $list_id . "', '" . $user_id . "')") or die(mysql_error());
         }
         else
         {
-            $query = mysql_query("DELETE FROM user_cart WHERE listing_id = '" . $list_id . "' AND user_id = '" . $user_id . "')") or die(mysql_error());
+            $query = mysql_query("DELETE FROM user_cart WHERE listing_id = '" . $list_id . "' AND user_id = '" . $user_id . "'") or die(mysql_error());
         }
     }
