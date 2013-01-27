@@ -1,8 +1,6 @@
-<?php
-#<div id="pill-bar">
-#    <ul><li id="buy" class="active"><a href="/buy.php">Buy</a></li><li id="sell" class="inactive"><a href="/sell.php">Sell</a></li></ul>
-#</div>
-?>
+<div id="pill-bar">
+    <ul><li id="buy" class="active"><a href="/buy.php">Buy</a></li><li id="sell" class="inactive"><a href="/sell.php">Sell</a></li></ul>
+</div>
 <div id="pill-content">
     <div id="buy_centercontent">
     
@@ -31,7 +29,7 @@
 .form-wrapper {
     width: 45%;
     height: 40px;
-    padding: 15px 15px 15px 15px;
+    padding: .9% .9% .9% .9%;
     background: #444;
     background: rgba(0,0,0,.2);
     display: inline-block;
@@ -82,14 +80,15 @@
 /* Form submit button */
 .form-wrapper button {
     overflow: visible;
-    position: relative;
+    position: absolute;
+    left: 38.5%;
     float: right;
     border: 0;
     padding: 0;
     cursor: pointer;
     height: 40px;
-    width: 15.5%;
-    font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    width: 10%;
+    font: bold 60%/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
     color: #fff;
     text-transform: uppercase;
     background: #680000;
@@ -98,7 +97,7 @@
 }  
    
 .form-wrapper button:hover{    
-    background: #a00000;
+    background: #530000;
 }  
    
 .form-wrapper button:active,
@@ -118,7 +117,7 @@
 }
  
 .form-wrapper button:hover:before{
-    border-right-color: #a00000;
+    border-right-color: #530000;
 }
  
 .form-wrapper button:focus:before,
@@ -142,7 +141,7 @@
 </style>
         <fieldset>
             <div class="form-wrapper cf">
-                <input type="text" id="booksearch" placeholder="Enter Class Name or Find your Book by Author, Title, or ISBN">
+                <input type="text" id="booksearch" placeholder="Find your Book by Author, Title, or ISBN">
                 <button type="submit">Search</button>
             </div>
             <div class="form-wrapper cf">

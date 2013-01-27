@@ -14,4 +14,12 @@
         {
             $query = mysql_query("DELETE FROM user_cart WHERE listing_id = '" . $list_id . "' AND user_id = '" . $user_id . "'") or die(mysql_error());
         }
+        
+        $cartquery = mysql_query("SELECT * FROM user_cart WHERE (`listing_id` = " . $list_id . ")");
+        $users = 0;
+        while($cartresults = mysql_fetch_array($cartquery))
+        {
+            $users++;
+        }
+        echo($users);
     }
