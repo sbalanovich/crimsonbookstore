@@ -18,11 +18,12 @@
                     $author = $results['author'];
                     $title = $results['title'];
                     $isbn = $results['ISBN-10'];
-                    echo("<tr class = \"result\" id = book_" . $id . ">");
-                    echo("<td style=\"text-align:center;\">LOL</td>");                    
-                    echo("<td style=\"text-align:center;\"><h5>" . $author . "</h5></td>");
-                    echo("<td style=\"text-align:center;\"><h5>" . $title . "</h5></a></td>");
-                    echo("<td style=\"text-align:center;\"><h5>" . $isbn . "</h5></a></td>");
+                    $picture = $results["picture"];
+                    echo("<tr class = \"result hoverstate\" id = book_" . $id . ">");
+                    echo("<td class = 'hilite' style=\"text-align:center;\"><img id=\"coverpreview\" src='" . $picture . "'></td>");                  
+                    echo("<td class = 'hilite' style=\"text-align:center;\"><h5>" . $author . "</h5></td>");
+                    echo("<td class = 'hilite' style=\"text-align:center;\"><h5>" . $title . "</h5></a></td>");
+                    echo("<td class = 'hilite' style=\"text-align:center;\"><h5>" . $isbn . "</h5></a></td>");
                     echo("</tr>");
                 }
                 

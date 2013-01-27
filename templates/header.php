@@ -77,13 +77,4 @@
         </div>
 
         <div id="mainpage">
-            <div id="middle">
-                <div id="centercontent">
-                    <legend id="welcomeuser" style="color:#000000">
-                        <?php
-
-                        print("Welcome, [INSERT USERNAME HERE].");
-                        printf("\n");
-                        
-                        ?>
-                    </legend>
+                <div id="centercontent">             
