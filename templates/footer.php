@@ -1,11 +1,9 @@
 
             </div>
-            
-            <br/>
 
             <div id="bottom">
             <div id="copyright">
-                Copyright &#169; Lauren Urke, Sergei Balanovich
+                Copyright &#169; Lauren Urke, Serguei Balanovich
             </div>
             </div>
 

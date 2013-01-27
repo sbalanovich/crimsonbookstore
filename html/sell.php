@@ -27,7 +27,7 @@
 	    }
 	    
 		//insert listing into database
-		$listing = query("INSERT INTO listings (book_id, user_id, price, book_condition, comments) VALUES (?, ?, ?, ?, ?)", $book_id, $_SESSION["id"], $_POST["price"], $_POST["condition"], $_POST["comments"]);
+		$listing = query("INSERT INTO listings (book_id, user_id, price, book_condition, comments) VALUES (?, ?, ?, ?, ?)", $book_id, $_SESSION["id"], $_POST["price"], $_POST["book_condition"], $_POST["comments"]);
 
         // define message to show users
         $message="You have successfully listed " . $_POST["title"] . " for sale. To edit this listing... You will be notified when users add this to their shopping cart.";
