@@ -350,9 +350,14 @@ tr.yellow td {
 td {
   border-bottom: 1px white;
   padding: 0 0.5em;
-  width: 100px; }
+  width: 100px;
+   }
   td td {
     text-align: center; }
+    
+.ellipsis {
+    text-overflow: ellipsis;
+}
 
 /* UNNECESSARY
 

@@ -34,11 +34,12 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-user icon-white"></i>&nbsp;[User's Name Here]<strong class="caret"></strong></a>
                         <ul class="dropdown-menu">
-                            <li> Insert Links Here </li>
-                            <li> Report Bug </Li>
-                            <li> Feedback </Li>
-                            <li> Feature Request </li>
-                            <li> Log Out </li>
+                        <?php
+                            echo('<li> Report Bug </li>');
+                            echo('<li> Feedback </li>');
+                            echo('<li> Feature Request </li>');
+                            echo('<li> Log Out </li>');
+                        ?>
                         </ul>
                     </li>
                 </ul>
@@ -46,9 +47,19 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-shopping-cart icon-white"></i>&nbsp;Cart<strong class="caret"></strong></a>
                         <ul class="dropdown-menu">
-                            <li> Most recent list </li>
-                            <li> recent list </Li>
-                            <li> recent list </Li>
+                        <?php
+                            require '../html/db/connect.php';
+                            $query = mysql_query("SELECT * FROM user_cart WHERE (`user_id` = 1)");
+                            if (mysql_num_rows($query) !== 0)
+                            {                     
+                                while($results = mysql_fetch_array($query))
+                                {
+                                    echo('<li>' . $results['listing_id'] . '</li>');
+                                }
+                            }
+                            else
+                                echo("<h5>Nothing added to cart!</h5>")
+                        ?>
                         </ul>
                     </li>
                 </ul>
@@ -56,9 +67,19 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-star icon-white"></i>&nbsp;Starred<strong class="caret"></strong></a>
                         <ul class="dropdown-menu" >
-                            <li> Most recent list </li>
-                            <li> recent list </Li>
-                            <li> recent list </Li>
+                        <?php
+                            require '../html/db/connect.php';
+                            $query = mysql_query("SELECT * FROM user_starred WHERE (`user_id` = 1)");
+                            if (mysql_num_rows($query) !== 0)
+                            {                     
+                                while($results = mysql_fetch_array($query))
+                                {
+                                    echo('<li>' . $results['listing_id'] . '</li>');
+                                }
+                            }
+                            else
+                                echo("<h5>Nothing Starred!</h5>")
+                        ?>
                         </ul>
                     </li>
                 </ul>
@@ -67,9 +88,20 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-list icon-white"></i>&nbsp;My Listings<strong class="caret"></strong></a>
                         <ul class="dropdown-menu" >
-                            <li> Most recent list </li>
-                            <li> recent list </Li>
-                            <li> recent list </Li>
+                        <?php
+                            require '../html/db/connect.php';
+                            $query = mysql_query("SELECT * FROM listings WHERE (`user_id` = 1)");
+                            if (mysql_num_rows($query) !== 0)
+                            {                     
+                                while($results = mysql_fetch_array($query))
+                                {
+                                    echo('<li>' . $results['book_id'] . '</li>');
+                                }
+                            }
+                            else
+                                echo("<h4>No Listings!</h4>")
+
+                        ?>
                         </ul>
                     </li>  
                 </ul>

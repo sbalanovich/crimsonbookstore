@@ -2,7 +2,7 @@
     if(isset($_POST['bookid']) && !empty($_POST['bookid'])) {
 
         require '../db/connect.php';
-        $query = mysql_query("SELECT * FROM listings WHERE (`book_id` = " . $_POST['bookid'] . ")");            
+        $query = mysql_query("SELECT * FROM listings WHERE (`book_id` = " . $_POST['bookid'] . ") ORDER BY price DESC");            
 
         echo('<tr><td colspan = 4 id = listbook_' . $_POST['bookid'] . '><table id = "listings" style="color:#000000; padding:15px;">');
 
@@ -39,16 +39,18 @@
                     $id = $results['id'];
                     $price = $results['price'];
                     $cond = $results['book_condition'];
+                    $desc = $results['comments'];
                     $firstname = $userresults['firstname'];
                     $lastname = $userresults['lastname'];
 
                     echo("<tr id =list_" . $id . " class='hoverstate'>");
                     if($users == 0)
                     {
-                        echo("<td class = 'listhilite green' id = boom_". $id . " style=\"text-align:center;\">LOL</td>");                    
-                        echo("<td class = 'listhilite green' id = boom_". $id . " style=\"text-align:center;\"><h5>$" . $price . "</h5></td>");
+                  
+                        echo("<td class = 'listhilite green' id = boom_". $id . " style=\"text-align:center;\"><h3>$" . $price . "</h3></td>");                        
                         echo("<td class = 'listhilite green' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $cond . "</h5></td>");
-                        echo("<td class = 'listhilite green' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $firstname . " " . $lastname . "</h5></td>");
+                        echo("<td class = 'listhilite green ellipsis' id = boom_". $id . " style=\"text-align:center;\"><p>" . $desc . "</p></td>");
+                        echo("<td class = 'listhilite green' id = boom_". $id . " style=\"text-align:center;\"><h5>Sold by: " . $firstname . " " . $lastname . "</h5></td>");
 
                         if ($starred == false)
                             echo("<td class = 'listhilite green' id = star_" . $id . "><h5><a style = 'text decoration: none' rel='tooltip' data-original-title='Star this item to add it to your wishlist'><i class=\"icon-star\"></i></a> Star It!</h5></td>");
@@ -62,10 +64,10 @@
                     }
                     if($users > 0 && $users < 5)
                     {
-                        echo("<td class = 'listhilite yellow' id = boom_". $id . " style=\"text-align:center;\">LOL</td>");                    
-                        echo("<td class = 'listhilite yellow' id = boom_". $id . " style=\"text-align:center;\"><h5>$" . $price . "</h5></td>");
+                 
+                        echo("<td class = 'listhilite yellow' id = boom_". $id . " style=\"text-align:center;\"><h3>$" . $price . "</h3></td>");
                         echo("<td class = 'listhilite yellow' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $cond . "</h5></td>");
-                        echo("<td class = 'listhilite yellow' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $firstname . " " . $lastname . "</h5></td>");
+                        echo("<td class = 'listhilite yellow' id = boom_". $id . " style=\"text-align:center;\"><h5>Sold by: " . $firstname . " " . $lastname . "</h5></td>");
 
                         if ($starred == false)
                             echo("<td class = 'listhilite yellow' id = star_" . $id . "><h5><a style = 'text decoration: none' rel='tooltip' data-original-title='Star this item to add it to your wishlist'><i class=\"icon-star\"></i></a> Star It!</h5></td>");
@@ -79,10 +81,10 @@
                     }
                     if($users == 5)
                     {
-                        echo("<td class = 'listhilite pending_red' id = boom_". $id . " style=\"text-align:center;\">LOL</td>");                    
-                        echo("<td class = 'listhilite pending_red' id = boom_". $id . " style=\"text-align:center;\"><h5>$" . $price . "</h5></td>");
+                  
+                        echo("<td class = 'listhilite pending_red' id = boom_". $id . " style=\"text-align:center;\"><h3>$" . $price . "</h3></td>");
                         echo("<td class = 'listhilite pending_red' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $cond . "</h5></td>");
-                        echo("<td class = 'listhilite pending_red' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $firstname . " " . $lastname . "</h5></td>");
+                        echo("<td class = 'listhilite pending_red' id = boom_". $id . " style=\"text-align:center;\"><h5>Sold by: " . $firstname . " " . $lastname . "</h5></td>");
 
                         if ($starred == false)
                             echo("<td class = 'listhilite pending_red' id = star_" . $id . "><h5><a style = 'text decoration: none' rel='tooltip' data-original-title='Star this item to add it to your wishlist'><i class=\"icon-star\"></i></a> Star It!</h5></td>");
@@ -95,11 +97,10 @@
                         echo("<td class = 'listhilite pending_red' id = user_". $id . " style=\"text-align:center;\"><h5><a style = 'text decoration: none' rel='tooltip' data-original-title='" . $users . " users have already asked to buy this book'><i class=\"icon-user icon-white\"></i></a>     " . $users . "</h5></td>");
                     }
                     if($users > 6)
-                    {
-                        echo("<td class = 'listhilite red' id = boom_". $id . " style=\"text-align:center;\">LOL</td>");                    
-                        echo("<td class = 'listhilite red' id = boom_". $id . " style=\"text-align:center;\"><h5>$" . $price . "</h5></td>");
+                    {             
+                        echo("<td class = 'listhilite red' id = boom_". $id . " style=\"text-align:center;\"><h3>$" . $price . "</h3></td>");
                         echo("<td class = 'listhilite red' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $cond . "</h5></td>");
-                        echo("<td class = 'listhilite red' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $firstname . " " . $lastname . "</h5></td>");
+                        echo("<td class = 'listhilite red' id = boom_". $id . " style=\"text-align:center;\"><h5>Sold by: " . $firstname . " " . $lastname . "</h5></td>");
 
                         if ($starred == false)
                             echo("<td class = 'listhilite red' id = star_" . $id . "><h5><a style = 'text decoration: none' rel='tooltip' data-original-title='Star this item to add it to your wishlist'><i class=\"icon-star\"></i></a> Star It!</h5></td>");

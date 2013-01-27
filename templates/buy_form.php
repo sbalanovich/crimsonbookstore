@@ -2,7 +2,6 @@
     <ul><li id="buy" class="active"><a href="/buy.php">Buy</a></li><li id="sell" class="inactive"><a href="/sell.php">Sell</a></li></ul>
 </div>
 <div id="pill-content">
-    <div id="buy_centercontent">
     
 
 
