@@ -15,7 +15,7 @@
         }
         $class_id=1; //need to query
         if(empty($isbookneeded)) {
-			$insertbook=query("INSERT INTO books (title, author, publisher, class_id, mandatory, picture, description, isbn10, isbn13) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", $_POST["title"], $_POST["authors"], $_POST["publisher"], $class_id, $_POST["mandatory"], $_POST["pic"], $_POST["description"], $_POST["isbn10"], $_POST["isbn13"]);
+			$insertbook=query("INSERT INTO books (title, author, publisher, class_id, smandatory, picture, description, isbn10, isbn13) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", $_POST["title"], $_POST["authors"], $_POST["publisher"], $class_id, $_POST["smandatory"], $_POST["pic"], $_POST["description"], $_POST["isbn10"], $_POST["isbn13"]);
 	        if ($insertbook === false) {
 	            apologize("Unable to insert book into books");
 	        }
@@ -30,7 +30,7 @@
 		$listing = query("INSERT INTO listings (book_id, user_id, price, book_condition, comments) VALUES (?, ?, ?, ?, ?)", $book_id, $_SESSION["id"], $_POST["price"], $_POST["book_condition"], $_POST["comments"]);
 
         // define message to show users
-        $message="You have successfully listed " . $_POST["title"] . " for sale. To edit this listing... You will be notified when users add this to their shopping cart.";
+        $message="You have successfully listed " . $_POST["title"] . " for sale. You will be notified when users add this to their shopping cart.";
         // render sell
         render("sell_form.php",array("title" => "Welcome to Crimson Bookstore!", "message"=> $message)); 
 

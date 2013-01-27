@@ -210,10 +210,14 @@ body{
     }
   }
   #message{
-    background: #FFFFFF; 
+    background-color: rgba(248, 244, 240, 0.28);
     overflow:auto; 
-    padding:1px;
-    @include box-shadow(0 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px rgba(255, 255, 255, 0.34));
+    padding:5px;
+    @include box-shadow(-1px 1px 1px rgba(0, 0, 0, 0.4), inset -1px 1px 2px rgba(199, 195, 189, 0.4));
+    margin-top: 20px;
+    border: rgb(172, 158, 130);
+
+
   }
   #big{
     .sellresult{
@@ -230,7 +234,7 @@ body{
       .sellbook{
         display: inline-block;
         //margin-left: 2%;
-        width: 50%;
+        width: 49%;
         img{
           display: inline-block;
           width: 75px;
@@ -276,7 +280,7 @@ body{
         vertical-align: top;
         display: inline-block;
         //margin-right: 2%;
-        width: 50%;
+        width: 49%;
         .actualform{
           margin: 0 0 0px 0;
           #scourse{

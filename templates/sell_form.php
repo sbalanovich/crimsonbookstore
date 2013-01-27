@@ -131,7 +131,7 @@ color: white;
             <button type="submit" id="sellsearchsubmit" class="btn">Search</button>
         </div>
             <?php if(isset($message))  {
-                        echo "<div id='message' >" . $message . "</div>";
+                        echo "<div id='message' class='well' >" . $message . "</div>";
                      } ?>
 
     <!-- todo insert links into message
@@ -142,5 +142,119 @@ color: white;
         <div id="big">    
             <!-- insert one search result here in div-->
             <!--insert form here -->
+            <div class='sellresult well'>
+                <div class='sellbook'>
+                    <img src='http://bks2.books.google.com/books?id=T2z7kgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' alt='book image'>
+                    <ol><li id='stitle'>Biology: How Life Works</li>
+                        <li id='sauthors'>James Moris</li>
+                        <li id='spublisher'>Worth Publishers | 9781429218702</li>
+                        <li id='sdescription'>No Description Available </li>
+                    </ol>
+                </div>
+                <div class='sellform'>
+                    <form class='actualform' name='sellform' method='post' action='sell.php'>
+                        <input id='scourse' name='course' placeholder='Course' type='text'/>
+                        <input id='smandatory' type='checkbox' name='smandatory' value='1'>
+                        <label for='smandatory'>Required Text?</label><br>
+                        <input id='sprice' name='price' placeholder='List your price' type='text'/>
+                        <div class=selectstyle><select id='sbookcondition' vertical-align='top' name='book_condition' size='1'>
+                            <option value='' class='uneditable-input' selected='selected'>Condition</option>
+                            <option value='new'>Outstanding</option>
+                            <option value='exceeds'>Exceeds Expectations</option>
+                            <option value='acceptable'>Acceptable</option>
+                            <option value='poor'>Poor</option>
+                            <option value='dreadful'>Dreadful</option>
+                            <option value='troll'>Troll</option>
+                        </select>
+                        </div>
+                        <textarea id='scomments' name='comments' placeholder='Comments' maxlength='800' rows='3'></textarea>
+                        <button id='sbutton' type='submit' name='sellformsubmit' class='btn'>Submit</button>
+                        <input class='preset' name='title' value='Biology: How Life Works' readonly>
+                        <input class='preset' name='authors' value='James Moris' readonly>
+                        <input class='preset' name='publisher' value='Worth Publishers' readonly>
+                        <input class='preset' name='description' value='No Description Available' readonly>
+                        <input class='preset' name='pic' value='" + books[i]["pic"] + "' readonly>
+                        <input class='preset' name='isbn10' value='1429218703' readonly>
+                        <input class='preset' name='isbn13' value='9781429218702' readonly>
+                    </form>
+                </div>
+            </div>
+
+            <div class='sellresult well'>
+                <div class='sellbook'>
+                    <img src='http://bks5.books.google.com/books?id=emAyzTNy1cUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api' alt='book image'>
+                    <ol><li id='stitle'>Psychology</li>
+                        <li id='sauthors'>Daniel L. Schacter, Daniel T. Gilbert, Daniel M. Wegner</li>
+                        <li id='spublisher'>Worth Publishers | 9781429237192</li>
+                        <li id='sdescription'>The result of an exclusive partnership with Scientific American, the articles in this collection were personally selected from the pages of world's foremost scientific magazine by the authors Dan Schacter, Dan Gilbert, and Dan Wegner.</li>
+                    </ol>
+                </div>
+                <div class='sellform'>
+                    <form class='actualform' name='sellform' method='post' action='sell.php'>
+                        <input id='scourse' name='course' placeholder='Course' type='text'/>
+                        <input id='smandatory' type='checkbox' name='smandatory' value='1'>
+                        <label for='smandatory'>Required Text?</label><br>
+                        <input id='sprice' name='price' placeholder='List your price' type='text'/>
+                        <div class=selectstyle><select id='sbookcondition' vertical-align='top' name='book_condition' size='1'>
+                            <option value='' class='uneditable-input' selected='selected'>Condition</option>
+                            <option value='new'>Outstanding</option>
+                            <option value='exceeds'>Exceeds Expectations</option>
+                            <option value='acceptable'>Acceptable</option>
+                            <option value='poor'>Poor</option>
+                            <option value='dreadful'>Dreadful</option>
+                            <option value='troll'>Troll</option>
+                        </select>
+                        </div>
+                        <textarea id='scomments' name='comments' placeholder='Comments' maxlength='800' rows='3'></textarea>
+                        <button id='sbutton' type='submit' name='sellformsubmit' class='btn'>Submit</button>
+                        <input class='preset' name='title' value='Psychology' readonly>
+                        <input class='preset' name='authors' value='Daniel L. Schacter, Daniel T. Gilbert, Daniel M. Wegner' readonly>
+                        <input class='preset' name='publisher' value='Worth Publishers' readonly>
+                        <input class='preset' name='description' value='The result of an exclusive partnership with Scientific American, the articles in this collection were personally selected from the pages of world's foremost scientific magazine by the authors Dan Schacter, Dan Gilbert, and Dan Wegner.' readonly>
+                        <input class='preset' name='pic' value='http://bks5.books.google.com/books?id=emAyzTNy1cUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api' readonly>
+                        <input class='preset' name='isbn10' value='1429237198' readonly>
+                        <input class='preset' name='isbn13' value='9781429237192' readonly>
+                    </form>
+                </div>
+            </div>
+
+            <div class='sellresult well'>
+                <div class='sellbook'>
+                    <img src='http://bks4.books.google.com/books?id=nZE_wPg4Wi0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api' alt='book image'>
+                    <ol><li id='stitle'>Principles of Economics</li>
+                        <li id='sauthors'>N. Gregory Mankiw</li>
+                        <li id='spublisher'>South-Western Pub | 9780538453059</li>
+                        <li id='sdescription'>The result of an exclusive partnership with Scientific American, the articles in this collection were personally selected from the pages of worlds foremost scientific magazine by the authors Dan Schacter, Dan Gilbert, and Dan Wegner.</li>
+                    </ol>
+                </div>
+                <div class='sellform'>
+                    <form class='actualform' name='sellform' method='post' action='sell.php'>
+                        <input id='scourse' name='course' placeholder='Course' type='text'/>
+                        <input id='smandatory' type='checkbox' name='smandatory' value='1'>
+                        <label for='smandatory'>Required Text?</label><br>
+                        <input id='sprice' name='price' placeholder='List your price' type='text'/>
+                        <div class=selectstyle><select id='sbookcondition' vertical-align='top' name='book_condition' size='1'>
+                            <option value='' class='uneditable-input' selected='selected'>Condition</option>
+                            <option value='new'>Outstanding</option>
+                            <option value='exceeds'>Exceeds Expectations</option>
+                            <option value='acceptable'>Acceptable</option>
+                            <option value='poor'>Poor</option>
+                            <option value='dreadful'>Dreadful</option>
+                            <option value='troll'>Troll</option>
+                        </select>
+                        </div>
+                        <textarea id='scomments' name='comments' placeholder='Comments' maxlength='800' rows='3'></textarea>
+                        <button id='sbutton' type='submit' name='sellformsubmit' class='btn'>Submit</button>
+                        <input class='preset' name='title' value='Principles of Economics' readonly>
+                        <input class='preset' name='authors' value='N. Gregory Mankiw' readonly>
+                        <input class='preset' name='publisher' value='South-Western Pub' readonly>
+                        <input class='preset' name='description' value="Principles of Economics, Sixth Edition, became a best seller after its introduction and continues to be the most popular and widely used text in the economics classroom. Instructors found it the perfect complement to their teaching. A text by a superb writer and economist that stressed the most important concepts without overwhelming students with an excess of detail was a formula that was quickly imitated, but has yet to be matched. The sixth edition features a strong revision of content in all thirty-six chapters. Dozens of new applications emphasize the real-world relevance of economics for todays students through interesting news articles, realistic case studies, and engaging problems. The premier ancillary package is the most extensive in the industry, using a team of instructors/preparers that have been with the project since the first edition. The text material is again fully integrated into Aplia, the best-selling online homework solution. I have tried to put myself in the position of someone seeing economics for the first time. My goal is to emphasize the material that students should and do find interesting about the study of the economy.--N. Gregory Mankiw.--Publishers website." readonly>
+                        <input class='preset' name='pic' value='http://bks4.books.google.com/books?id=nZE_wPg4Wi0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api' readonly>
+                        <input class='preset' name='isbn10' value='0538453052' readonly>
+                        <input class='preset' name='isbn13' value='9780538453059' readonly>
+                    </form>
+                </div>
+            </div>
+
         </div>
 </div>
