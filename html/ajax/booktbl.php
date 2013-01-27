@@ -6,8 +6,8 @@
             SELECT * FROM books
             WHERE (`author` LIKE '%".mysql_real_escape_string(trim($_POST['booksearch']))."%')
             OR (`title` LIKE '%".mysql_real_escape_string(trim($_POST['booksearch']))."%') 
-            OR (`isbn-10` LIKE '%".mysql_real_escape_string(trim($_POST['booksearch']))."%') 
-            OR (`isbn-13` LIKE '%".mysql_real_escape_string(trim($_POST['booksearch']))."%')") or die(mysql_error());
+            OR (`isbn10` LIKE '%".mysql_real_escape_string(trim($_POST['booksearch']))."%') 
+            OR (`isbn13` LIKE '%".mysql_real_escape_string(trim($_POST['booksearch']))."%')") or die(mysql_error());
         
         if (mysql_num_rows($query) !== 0)
         {                
@@ -17,7 +17,7 @@
                     $id = $results['id'];
                     $author = $results['author'];
                     $title = $results['title'];
-                    $isbn = $results['ISBN-10'];
+                    $isbn = $results['isbn10'];
                     $picture = $results["picture"];
                     echo("<tr class = \"result hoverstate\" id = book_" . $id . ">");
                     echo("<td class = 'hilite' style=\"text-align:center;\"><img id=\"coverpreview\" src='" . $picture . "'></td>");                  

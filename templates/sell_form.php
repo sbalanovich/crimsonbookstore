@@ -173,7 +173,7 @@ color: white;
                         <input class='preset' name='authors' value='James Moris' readonly>
                         <input class='preset' name='publisher' value='Worth Publishers' readonly>
                         <input class='preset' name='description' value='No Description Available' readonly>
-                        <input class='preset' name='pic' value='" + books[i]["pic"] + "' readonly>
+                        <input class='preset' name='pic' value='http://bks2.books.google.com/books?id=T2z7kgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' alt='book image' readonly>
                         <input class='preset' name='isbn10' value='1429218703' readonly>
                         <input class='preset' name='isbn13' value='9781429218702' readonly>
                     </form>
