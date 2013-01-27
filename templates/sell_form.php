@@ -21,7 +21,6 @@
     background: rgba(0,0,0,.2);
     display: inline-block;
     vertical-align:top;
-    margin-left:2%;
     text-align:center;
     border-radius: 10px;
     box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
@@ -36,13 +35,13 @@
     float: left;   
     font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
     border: 0;
-    background: #eee;
+              background-color: rgb(228, 218, 202);
     border-radius: 3px 0 0 3px;     
 }
  
 .form-wrapper input:focus {
     outline: 0;
-    background: #fff;
+    background-color: rgb(228, 218, 202);
     box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
 }
  
@@ -74,7 +73,7 @@
     padding: 0;
     cursor: pointer;
     height: 40px;
-    width: 10%;
+    width: 8%;
     font: bold 60%/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
     color: #fff;
     text-transform: uppercase;
@@ -94,7 +93,7 @@ color: white;
 .form-wrapper button:active,
 .form-wrapper button:focus{  
     background: #c42f2f;
-    outline: 0;  
+    outline: 0;
 }
  
 .form-wrapper button:before { /* left arrow */

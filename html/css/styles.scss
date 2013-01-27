@@ -124,7 +124,7 @@ body{
     }
   }
   .active a{
-    padding: 10px 0 7px 0;
+    padding: 10px 0 8px 0;
     text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
     //border: 1px solid #ccc;
     border-bottom: 1px rgba(199, 183, 160, 0.83);
@@ -220,8 +220,12 @@ body{
       background-color: rgba(150, 127, 102, 0.28);
       margin: 10px 0 10px 0px;
       cursor: pointer;
+      @include box-shadow(inset 0px 1px 3px rgba(0, 0, 0, .8));
+      border: rgb(172, 158, 130);
       &:hover{
-        @include box-shadow(0px 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px rgba(255, 255, 255, 0.34));
+        @include box-shadow(inset 0px 1px 5px rgba(0, 0, 0, .8));
+        border: rgb(172, 158, 130);
+
       }
       .sellbook{
         display: inline-block;
@@ -297,6 +301,7 @@ body{
             margin-bottom: 1px;
           }
           input{
+            background-color: rgb(228, 218, 202);
             &:focus{
               border-color: rgba(125, 0, 0, 0.58);
               @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
@@ -312,10 +317,10 @@ body{
 
             select{
               height: 30px;
-              background: transparent;
               //-webkit-appearance: none;
               vertical-align: top;
               padding-top: 0;
+              background-color: rgb(228, 218, 202);
               &:focus{
                 outline: none;
                // border-color: rgba(125, 0, 0, 0.58);
@@ -336,6 +341,7 @@ body{
             width: 350px;
             margin-bottom: 10px;
             margin-top: 9px;
+            background-color: rgb(228, 218, 202);
             &:focus{
               border-color: rgba(125, 0, 0, 0.58);
               @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
@@ -346,7 +352,18 @@ body{
             margin-bottom: 10px;
             margin-top: 9px;
             height: 50px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+            background: -webkit-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+            background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+            background-color: rgb(80, 0, 0);
+            color: rgb(252, 234, 234);
+            &:hover{
+              background-color: #500000;
+              text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+              @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
 
+
+            }
           }
         }
       }
