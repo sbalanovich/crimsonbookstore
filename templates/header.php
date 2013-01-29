@@ -32,7 +32,12 @@
                 <ul class="nav pull-right">
                     <li class="divider-vertical"></li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-user icon-white"></i>&nbsp;[User's Name Here]<strong class="caret"></strong></a>
+                    <?php 
+                        require '../html/db/connect.php';
+                        $query = mysql_query("SELECT * FROM users WHERE (`id` = 1)");
+                        $results = mysql_fetch_array($query);
+                        echo('<a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-user icon-white"></i>' . $results['firstname'] . " " . $results['lastname'] . '<strong class="caret"></strong></a>')
+                    ?>
                         <ul class="dropdown-menu">
                         <?php
                             echo('<li> Report Bug </li>');
@@ -51,10 +56,12 @@
                             require '../html/db/connect.php';
                             $query = mysql_query("SELECT * FROM user_cart WHERE (`user_id` = 1)");
                             if (mysql_num_rows($query) !== 0)
-                            {                     
+                            {                                
                                 while($results = mysql_fetch_array($query))
                                 {
-                                    echo('<li>' . $results['listing_id'] . '</li>');
+                                    $query2 = mysql_query("SELECT * FROM books WHERE (`id` =" . $results['listing_id'] . "1)");
+                                    $results2 = mysql_fetch_array($query2);
+                                    echo('<li>' . $results2['title'] . '</li>');
                                 }
                             }
                             else

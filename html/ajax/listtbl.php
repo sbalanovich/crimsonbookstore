@@ -2,7 +2,7 @@
     if(isset($_POST['bookid']) && !empty($_POST['bookid'])) {
 
         require '../db/connect.php';
-        $query = mysql_query("SELECT * FROM listings WHERE (`book_id` = " . $_POST['bookid'] . ") ORDER BY price DESC");            
+        $query = mysql_query("SELECT * FROM listings WHERE (`book_id` = " . $_POST['bookid'] . ") ORDER BY price");            
 
         echo('<tr><td colspan = 4 id = listbook_' . $_POST['bookid'] . '><table id = "listings" style="color:#000000; padding:15px;">');
 
@@ -45,11 +45,10 @@
 
                     echo("<tr id =list_" . $id . " class='hoverstate'>");
                     if($users == 0)
-                    {
-                  
+                    {                  
                         echo("<td class = 'listhilite green' id = boom_". $id . " style=\"text-align:center;\"><h3>$" . $price . "</h3></td>");                        
                         echo("<td class = 'listhilite green' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $cond . "</h5></td>");
-                        echo("<td class = 'listhilite green ellipsis' id = boom_". $id . " style=\"text-align:center;\"><p>" . $desc . "</p></td>");
+                        echo("<td class = 'listhilite green ellipsis' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $desc . "</h5></td>");
                         echo("<td class = 'listhilite green' id = boom_". $id . " style=\"text-align:center;\"><h5>Sold by: " . $firstname . " " . $lastname . "</h5></td>");
 
                         if ($starred == false)
@@ -67,6 +66,7 @@
                  
                         echo("<td class = 'listhilite yellow' id = boom_". $id . " style=\"text-align:center;\"><h3>$" . $price . "</h3></td>");
                         echo("<td class = 'listhilite yellow' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $cond . "</h5></td>");
+                        echo("<td class = 'listhilite yellow ellipsis' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $desc . "</h5></td>");
                         echo("<td class = 'listhilite yellow' id = boom_". $id . " style=\"text-align:center;\"><h5>Sold by: " . $firstname . " " . $lastname . "</h5></td>");
 
                         if ($starred == false)
@@ -84,6 +84,7 @@
                   
                         echo("<td class = 'listhilite pending_red' id = boom_". $id . " style=\"text-align:center;\"><h3>$" . $price . "</h3></td>");
                         echo("<td class = 'listhilite pending_red' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $cond . "</h5></td>");
+                        echo("<td class = 'listhilite pending_red ellipsis' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $desc . "</h5></td>");
                         echo("<td class = 'listhilite pending_red' id = boom_". $id . " style=\"text-align:center;\"><h5>Sold by: " . $firstname . " " . $lastname . "</h5></td>");
 
                         if ($starred == false)
@@ -100,6 +101,7 @@
                     {             
                         echo("<td class = 'listhilite red' id = boom_". $id . " style=\"text-align:center;\"><h3>$" . $price . "</h3></td>");
                         echo("<td class = 'listhilite red' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $cond . "</h5></td>");
+                        echo("<td class = 'listhilite red ellipsis' id = boom_". $id . " style=\"text-align:center;\"><h5>" . $desc . "</h5></td>");
                         echo("<td class = 'listhilite red' id = boom_". $id . " style=\"text-align:center;\"><h5>Sold by: " . $firstname . " " . $lastname . "</h5></td>");
 
                         if ($starred == false)
@@ -118,7 +120,7 @@
         
         else
         {        
-            echo ('<h3>No Listings found</h3>');
+            echo ('<h3>No Listings found!</h3>');
         }
         echo('</td></table></tr>');
     }

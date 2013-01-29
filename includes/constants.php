@@ -10,15 +10,15 @@
      **********************************************************************/
 
     // your database's name
-    define("DATABASE", "crimsonbookstore");
+    define("DATABASE", "newcrimsonbookstore");
 
     // your database's password
-    define("PASSWORD", "root");
+    define("PASSWORD", "Crimzon1516");
 
     // your database's server
-    define("SERVER", "localhost");
+    define("SERVER", "mysql.crimsonbookstore.com");
 
     // your database's username
-    define("USERNAME", "root");
+    define("USERNAME", "sergurke");
 
 ?>
