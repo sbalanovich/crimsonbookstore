@@ -20,7 +20,7 @@
                     $isbn = $results['isbn10'];
                     $picture = $results["picture"];
                     echo("<tr class = \"result hoverstate\" id = book_" . $id . ">");
-                    echo("<td class = 'hilite' style=\"text-align:center;\"><img id=\"coverpreview\" src='" . $picture . "'></td>");                  
+                    echo("<td class = 'hilite img-polaroid' style=\"text-align:center;\"><img id=\"coverpreview\" src='" . $picture . "'></td>");                  
                     echo("<td class = 'hilite' style=\"text-align:center;\"><h5>" . $author . "</h5></td>");
                     echo("<td class = 'hilite' style=\"text-align:center;\"><h5>" . $title . "</h5></a></td>");
                     echo("<td class = 'hilite' style=\"text-align:center;\"><h5>" . $isbn . "</h5></a></td>");
@@ -32,6 +32,6 @@
         
         else
         {        
-            echo ('</table><h3>Book not found</h3></div>');
+            echo ('</tbody><h3 style = "text-align:center" >Book not found</h3></table></div>');
         }
     }
