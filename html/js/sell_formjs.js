@@ -4,16 +4,32 @@ var ajaxRequest = null;
 $(document).ready(function() {
     $('input.preset').hide();
     $('.actualform').hide();
+    $('.cpform').hide();
+    $('.nfform').hide();
     $('.sellformentrance').show();
+    //when cp is clicked
+    $('.coursepack').on('click', '.cpbutton', function() {
+        $('.cpform').show();
+        $('.cpbutton').attr('disabled', true);
+        $('.nfform').hide();
+        $('.nfbutton').attr('disabled', false);
+    });
+    //when nf is clicked
+    $('.notfound').on('click', '.nfbutton', function() {
+        $('.nfform').show();
+        $('.nfbutton').attr('disabled', true);
+        $('.cpform').hide();
+        $('.cpbutton').attr('disabled', false);
+
+    });
     //when one result is clicked for common results
         $('#big').on('click', '.sellformentrance', function() {
             //hide any open forms and current button
             $('.actualform').hide();
             $('.sellformentrance').show();
             $(this).hide();
-
             //show form
-            $('#'+this.id+'.actualform').show();
+            $('#' + this.id + '.actualform').show();
             //hide presets in sellform
             $('input.preset').hide();
 

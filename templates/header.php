@@ -33,7 +33,9 @@
                     <li class="divider-vertical"></li>
                     <li class="dropdown">
                     <?php 
-                        require '../html/db/connect.php';
+                        //require '../html/db/connect.php';
+                        require_once '../includes/constants.php';
+
                         $query = mysql_query("SELECT * FROM users WHERE (`id` = 1)");
                         $results = mysql_fetch_array($query);
                         echo('<a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-user icon-white"></i>' . $results['firstname'] . " " . $results['lastname'] . '<strong class="caret"></strong></a>')
@@ -53,7 +55,9 @@
                         <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-shopping-cart icon-white"></i>&nbsp;Cart<strong class="caret"></strong></a>
                         <ul class="dropdown-menu">
                         <?php
-                            require '../html/db/connect.php';
+                            //require '../html/db/connect.php';
+                            require_once '../includes/constants.php';
+
                             $query = mysql_query("SELECT * FROM user_cart WHERE (`user_id` = 1)");
                             if (mysql_num_rows($query) !== 0)
                             {                                
@@ -75,7 +79,9 @@
                         <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-star icon-white"></i>&nbsp;Starred<strong class="caret"></strong></a>
                         <ul class="dropdown-menu" >
                         <?php
-                            require '../html/db/connect.php';
+                            //require '../html/db/connect.php';
+                            require_once '../includes/constants.php';
+
                             $query = mysql_query("SELECT * FROM user_starred WHERE (`user_id` = 1)");
                             if (mysql_num_rows($query) !== 0)
                             {                     
@@ -96,7 +102,9 @@
                         <a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-list icon-white"></i>&nbsp;My Listings<strong class="caret"></strong></a>
                         <ul class="dropdown-menu" >
                         <?php
-                            require '../html/db/connect.php';
+                            //require '../html/db/connect.php';
+                            require_once '../includes/constants.php';
+
                             $query = mysql_query("SELECT * FROM listings WHERE (`user_id` = 1)");
                             if (mysql_num_rows($query) !== 0)
                             {                     

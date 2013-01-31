@@ -1,10 +1,10 @@
-<?php
+ <?php
 
-  $host = "mysql.crimsonbookstore.com";
-  $user = "sergurke";
-  $pass = "Crimzon1516";
+  $host = "localhost";
+  $user = "root";
+  $pass = "root";
 
-  $databaseName = "newcrimsonbookstore";
+  $databaseName = "crimsonbookstore";
   $tableName = "variables";
 
   $con = mysql_connect($host,$user,$pass);

@@ -4,7 +4,7 @@
         require '../db/connect.php';
         $query = mysql_query("SELECT * FROM listings WHERE (`book_id` = " . $_POST['bookid'] . ") ORDER BY price");            
 
-        echo('<tr><td colspan = 4 id = listbook_' . $_POST['bookid'] . '><table id = "listings" style="color:#000000; padding:15px;">');
+        echo('<table id = "listings" style="color:#000000; padding:15px;">');
 
         if (mysql_num_rows($query) !== 0)
         {               

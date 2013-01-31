@@ -217,8 +217,8 @@ body{
   #big{
     #common{
       font-size:28px;
-      color: rgb(51, 49, 49);
-      margin-top: 20px;
+      color: #740101;
+      margin-top: 30px;
       margin-bottom: 20px;
     }
     .sellresult{
@@ -384,6 +384,225 @@ body{
 }
 
 
+.coursepack{
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+  .cpbutton{
+    margin-left: 15%;
+    margin-top: 9px;    
+    height: 45px;
+    width: 90%;
+    font-size: 20px;
+    text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
+    color: rgb(252, 234, 234);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background-color: rgb(80, 0, 0);
+    &:hover{
+       background-color: #500000;
+       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+       @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+    }
+  }
+}
+.cpform{
+  margin: 10px 5% 0px 5%;
+  background-color: rgba(150, 127, 102, 0.28);
+  border: #ac9e82;
+  @include box-shadow (inset 0px 1px 3px rgba(0, 0, 0, 0.8));
+  .cplabel{
+    font-size: 20px;
+    margin-left: 0%;
+    color: #740101;
+    margin-bottom: 5px;
+  }
+  #scourse{
+    width: 200px;
+    margin-bottom: 0px;
+  }
+  #smandatory{
+    margin-left: 10px;
+    vertical-align: top;
+    margin-top: 8px;
+  }
+  label {
+    display: inline-block;
+    margin-left: 7px;
+    vertical-align: top;
+    margin-top: 5px;
+  }
+  #sprice{
+    width: 200px;
+    display: inline-block;
+    margin-top:10px;
+    margin-bottom: 1px;
+  }
+  input{
+    background-color: rgb(228, 218, 202);
+    &:focus{
+      border-color: rgba(125, 0, 0, 0.58);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
+    }
+  }
+  #sbookcondition{
+    margin-left: 10px;
+  }
+  .selectstyle{
+    overflow: hidden;
+    height: 30px;
+    display: inline-block;
+    select{
+      height: 30px;
+      //-webkit-appearance: none;
+      vertical-align: top;
+      padding-top: 0;
+      background-color: rgb(228, 218, 202);
+      &:focus{
+        outline: none;
+       // border-color: rgba(125, 0, 0, 0.58);
+       // @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(125, 0, 0, 0.68));
+      }
+    }
+  }
+  textarea {
+    height: 40px;
+    width: 350px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    background-color: rgb(228, 218, 202);
+    &:focus{
+      border-color: rgba(125, 0, 0, 0.58);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
+    }
+  }
+  button{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    height: 50px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background-color: rgb(80, 0, 0);
+    color: rgb(252, 234, 234);
+    &:hover{
+      background-color: #500000;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+    }
+  }
+}
+
+
+.notfound{
+  display: inline-block;
+  width: 24%;
+  .nfbutton{
+    margin-left: 15%;
+    margin-top: 9px;    
+    height: 45px;
+    width: 90%;
+    font-size: 20px;
+    text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
+    color: rgb(252, 234, 234);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background-color: rgb(80, 0, 0);
+    &:hover{
+       background-color: #500000;
+       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+       @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+    }
+  }
+}
+.nfform{
+  margin: 10px 5% 0px 5%;
+  background-color: rgba(150, 127, 102, 0.28);
+  border: #ac9e82;
+  @include box-shadow (inset 0px 1px 3px rgba(0, 0, 0, 0.8));
+  .nflabel{
+    font-size: 20px;
+    margin-left: 0%;
+    margin-bottom: 5px;
+    color: #740101;
+  }
+  #scourse{
+    width: 200px;
+    margin-bottom: 0px;
+  }
+  #smandatory{
+    margin-left: 10px;
+    vertical-align: top;
+    margin-top: 8px;
+  }
+  label {
+    display: inline-block;
+    margin-left: 7px;
+    vertical-align: top;
+    margin-top: 5px;
+  }
+  #sprice{
+    width: 200px;
+    display: inline-block;
+    margin-top:10px;
+    margin-bottom: 1px;
+  }
+  input{
+    background-color: rgb(228, 218, 202);
+    &:focus{
+      border-color: rgba(125, 0, 0, 0.58);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
+    }
+  }
+  #sbookcondition{
+    margin-left: 10px;
+  }
+  .selectstyle{
+    overflow: hidden;
+    height: 30px;
+    display: inline-block;
+    select{
+      height: 30px;
+      //-webkit-appearance: none;
+      vertical-align: top;
+      padding-top: 0;
+      background-color: rgb(228, 218, 202);
+      &:focus{
+        outline: none;
+       // border-color: rgba(125, 0, 0, 0.58);
+       // @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(125, 0, 0, 0.68));
+      }
+    }
+  }
+  textarea {
+    height: 40px;
+    width: 350px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    background-color: rgb(228, 218, 202);
+    &:focus{
+      border-color: rgba(125, 0, 0, 0.58);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
+    }
+  }
+  button{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    height: 50px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background-color: rgb(80, 0, 0);
+    color: rgb(252, 234, 234);
+    &:hover{
+      background-color: #500000;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+    }
+  }
+}
 
 #bottom {
   font-size: smaller;

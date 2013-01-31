@@ -74,7 +74,7 @@
     cursor: pointer;
     height: 40px;
     width: 8%;
-    font: bold 60%/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    font: bold 100%/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
     color: #fff;
     text-transform: uppercase;
     background: #680000;
@@ -126,10 +126,58 @@ color: white;
     <ul><li id="buy" class="inactive"><a href="/buy.php">Buy</a></li><li id="sell" class="active"><a href="/sell.php">Sell</a></li></ul>
 </div>
 <div id="pill-content">
-        <div class="form-wrapper cf"> <!--id="sellsearchbar"-->
+        <div class="form-wrapper cf" display="inline-block"> <!--id="sellsearchbar"-->
             <input id="booksearchinput" name="booksearch" placeholder="Search by Title, Author, or ISBN" type="text"/>
             <button type="submit" id="sellsearchsubmit" class="btn">Search</button>
         </div>
+        <div class='coursepack'>
+                <button id='cp' type='submit' name='sellformentrance' class='cpbutton btn'>Or Sell a Course Pack</button>         
+        </div> 
+        <div class='notfound'>
+                <button id='nf' type='submit' name='sellformentrance' class='nfbutton btn'>Can't find your book?</button>            
+        </div>
+        <form id='cp' class='cpform well' name='sellform' method='post' action='sell.php'>
+            <label class='cplabel'>Course Packs:</label></br>
+            <input id='scourse' name='course' placeholder='Course' type='text'/>
+            <input id='smandatory' type='checkbox' name='smandatory' value='1'>
+            <label for='smandatory'>Required Text?</label><br>
+            <input id='sprice' name='price' placeholder='List your price' type='text'/>
+            <div class=selectstyle><select id='sbookcondition' vertical-align='top' name='book_condition' size='1'>
+                <option value='' class='uneditable-input' selected='selected'>Condition</option>
+                <option value='new'>Outstanding</option>
+                <option value='exceeds'>Exceeds Expectations</option>
+                <option value='acceptable'>Acceptable</option>
+                <option value='poor'>Poor</option>
+                <option value='dreadful'>Dreadful</option>
+                <option value='troll'>Troll</option>
+            </select>
+            </div>
+            <textarea id='scomments' name='comments' placeholder='Comments' maxlength='800' rows='3'></textarea>
+            <button id='sbutton' type='submit' name='sellformsubmit' class='btn'>Submit</button>
+        </form>  
+        <form id='nf' class='nfform well' name='sellform' method='post' action='sell.php'>
+            <label class='nflabel'>Enter the following information:</label></br>
+            <input id='stitle' name='stitle' placeholder='Title' type='text'/>
+            <input id='sauthors' name='sauthors' placeholder='Authors, separated by comma' type='text'/>
+            <input id='spublisher' name='spublisher' placeholder='Publisher' type='text'/>
+            <input id='sisbn13' name='sisbn13' placeholder='13 digit ISBN' type='text'/>
+            <input id='scourse' name='course' placeholder='Course' type='text'/>
+            <input id='smandatory' type='checkbox' name='smandatory' value='1'>
+            <label for='smandatory'>Required Text?</label><br>
+            <input id='sprice' name='price' placeholder='List your price' type='text'/>
+            <div class=selectstyle><select id='sbookcondition' vertical-align='top' name='book_condition' size='1'>
+                <option value='' class='uneditable-input' selected='selected'>Condition</option>
+                <option value='new'>Outstanding</option>
+                <option value='exceeds'>Exceeds Expectations</option>
+                <option value='acceptable'>Acceptable</option>
+                <option value='poor'>Poor</option>
+                <option value='dreadful'>Dreadful</option>
+                <option value='troll'>Troll</option>
+            </select>
+            </div>
+            <textarea id='scomments' name='comments' placeholder='Comments' maxlength='800' rows='3'></textarea>
+            <button id='sbutton' type='submit' name='sellformsubmit' class='btn'>Submit</button>
+        </form>
             <?php if(isset($message))  {
                         echo "<div id='message' class='well' >" . $message . "</div>";
                      } ?>
@@ -154,7 +202,7 @@ color: white;
                 </div>
                 <div class='sellform'>
                     <button id='1c' type='submit' name='sellformentrance' class='sellformentrance btn'>Sell</button>
-                    <form class='actualform' name='sellform' method='post' action='sell.php'>
+                    <form id='1c' class='actualform' name='sellform' method='post' action='sell.php'>
                         <input id='scourse' name='course' placeholder='Course' type='text'/>
                         <input id='smandatory' type='checkbox' name='smandatory' value='1'>
                         <label for='smandatory'>Required Text?</label><br>
@@ -193,7 +241,7 @@ color: white;
                 </div>
                 <div class='sellform'>
                     <button id='2c' type='submit' name='sellformentrance' class='sellformentrance btn'>Sell</button>
-                    <form class='actualform' name='sellform' method='post' action='sell.php'>
+                    <form id='2c' class='actualform' name='sellform' method='post' action='sell.php'>
                         <input id='scourse' name='course' placeholder='Course' type='text'/>
                         <input id='smandatory' type='checkbox' name='smandatory' value='1'>
                         <label for='smandatory'>Required Text?</label><br>
@@ -232,7 +280,7 @@ color: white;
                 </div>
                 <div class='sellform'>
                     <button id='3c' type='submit' name='sellformentrance' class='sellformentrance btn'>Sell</button>
-                    <form class='actualform' name='sellform' method='post' action='sell.php'>
+                    <form id='3c' class='actualform' name='sellform' method='post' action='sell.php'>
                         <input id='scourse' name='course' placeholder='Course' type='text'/>
                         <input id='smandatory' type='checkbox' name='smandatory' value='1'>
                         <label for='smandatory'>Required Text?</label><br>

@@ -190,8 +190,8 @@ body {
     border: #ac9e82; }
   #pill-content #big #common {
     font-size: 28px;
-    color: #333131;
-    margin-top: 20px;
+    color: #740101;
+    margin-top: 30px;
     margin-bottom: 20px; }
   #pill-content #big .sellresult {
     background-color: rgba(150, 127, 102, 0.28);
@@ -322,6 +322,203 @@ body {
           -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5);
           -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5); }
 
+.coursepack {
+  display: inline-block;
+  width: 25%;
+  vertical-align: top; }
+  .coursepack .cpbutton {
+    margin-left: 15%;
+    margin-top: 9px;
+    height: 45px;
+    width: 90%;
+    font-size: 20px;
+    text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
+    color: #fceaea;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7d0000), to(#500000));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(#7d0000), to(#500000));
+    background-color: #500000; }
+    .coursepack .cpbutton:hover {
+      background-color: #500000;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+.cpform {
+  margin: 10px 5% 0px 5%;
+  background-color: rgba(150, 127, 102, 0.28);
+  border: #ac9e82;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.8); }
+  .cpform .cplabel {
+    font-size: 20px;
+    margin-left: 0%;
+    color: #740101;
+    margin-bottom: 5px; }
+  .cpform #scourse {
+    width: 200px;
+    margin-bottom: 0px; }
+  .cpform #smandatory {
+    margin-left: 10px;
+    vertical-align: top;
+    margin-top: 8px; }
+  .cpform label {
+    display: inline-block;
+    margin-left: 7px;
+    vertical-align: top;
+    margin-top: 5px; }
+  .cpform #sprice {
+    width: 200px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 1px; }
+  .cpform input {
+    background-color: #e4daca; }
+    .cpform input:focus {
+      border-color: rgba(125, 0, 0, 0.58);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68);
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68); }
+  .cpform #sbookcondition {
+    margin-left: 10px; }
+  .cpform .selectstyle {
+    overflow: hidden;
+    height: 30px;
+    display: inline-block; }
+    .cpform .selectstyle select {
+      height: 30px;
+      vertical-align: top;
+      padding-top: 0;
+      background-color: #e4daca; }
+      .cpform .selectstyle select:focus {
+        outline: none; }
+  .cpform textarea {
+    height: 40px;
+    width: 350px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    background-color: #e4daca; }
+    .cpform textarea:focus {
+      border-color: rgba(125, 0, 0, 0.58);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68);
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68); }
+  .cpform button {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    height: 50px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+    background: -webkit-gradient(linear, left top, left bottom, from(#7d0000), to(#500000));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(#7d0000), to(#500000));
+    background-color: #500000;
+    color: #fceaea; }
+    .cpform button:hover {
+      background-color: #500000;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+.notfound {
+  display: inline-block;
+  width: 24%; }
+  .notfound .nfbutton {
+    margin-left: 15%;
+    margin-top: 9px;
+    height: 45px;
+    width: 90%;
+    font-size: 20px;
+    text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
+    color: #fceaea;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7d0000), to(#500000));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(#7d0000), to(#500000));
+    background-color: #500000; }
+    .notfound .nfbutton:hover {
+      background-color: #500000;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+.nfform {
+  margin: 10px 5% 0px 5%;
+  background-color: rgba(150, 127, 102, 0.28);
+  border: #ac9e82;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.8); }
+  .nfform .nflabel {
+    font-size: 20px;
+    margin-left: 0%;
+    margin-bottom: 5px;
+    color: #740101; }
+  .nfform #scourse {
+    width: 200px;
+    margin-bottom: 0px; }
+  .nfform #smandatory {
+    margin-left: 10px;
+    vertical-align: top;
+    margin-top: 8px; }
+  .nfform label {
+    display: inline-block;
+    margin-left: 7px;
+    vertical-align: top;
+    margin-top: 5px; }
+  .nfform #sprice {
+    width: 200px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 1px; }
+  .nfform input {
+    background-color: #e4daca; }
+    .nfform input:focus {
+      border-color: rgba(125, 0, 0, 0.58);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68);
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68); }
+  .nfform #sbookcondition {
+    margin-left: 10px; }
+  .nfform .selectstyle {
+    overflow: hidden;
+    height: 30px;
+    display: inline-block; }
+    .nfform .selectstyle select {
+      height: 30px;
+      vertical-align: top;
+      padding-top: 0;
+      background-color: #e4daca; }
+      .nfform .selectstyle select:focus {
+        outline: none; }
+  .nfform textarea {
+    height: 40px;
+    width: 350px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    background-color: #e4daca; }
+    .nfform textarea:focus {
+      border-color: rgba(125, 0, 0, 0.58);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68);
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68); }
+  .nfform button {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    height: 50px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+    background: -webkit-gradient(linear, left top, left bottom, from(#7d0000), to(#500000));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(#7d0000), to(#500000));
+    background-color: #500000;
+    color: #fceaea; }
+    .nfform button:hover {
+      background-color: #500000;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5); }
+
 #bottom {
   font-size: smaller;
   margin: 20px;
@@ -365,9 +562,7 @@ tr.yellow td {
 
 td {
   border-bottom: 1px white;
-  padding: 0 1.5% 0 1.5%;
-  width: 100px;
-   }
-
-td td {
+  padding: 0 0.5em;
+  width: 100px; }
+  td td {
     text-align: center; }
