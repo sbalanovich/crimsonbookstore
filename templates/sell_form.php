@@ -142,6 +142,7 @@ color: white;
         <div id="big">    
             <!-- insert one search result here in div-->
             <!--insert form here -->
+            <div id='common'>Commonly sold books: </div>
             <div class='sellresult well'>
                 <div class='sellbook'>
                     <img src='http://bks2.books.google.com/books?id=T2z7kgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' alt='book image'>
@@ -152,6 +153,7 @@ color: white;
                     </ol>
                 </div>
                 <div class='sellform'>
+                    <button id='1c' type='submit' name='sellformentrance' class='sellformentrance btn'>Sell</button>
                     <form class='actualform' name='sellform' method='post' action='sell.php'>
                         <input id='scourse' name='course' placeholder='Course' type='text'/>
                         <input id='smandatory' type='checkbox' name='smandatory' value='1'>
@@ -190,6 +192,7 @@ color: white;
                     </ol>
                 </div>
                 <div class='sellform'>
+                    <button id='2c' type='submit' name='sellformentrance' class='sellformentrance btn'>Sell</button>
                     <form class='actualform' name='sellform' method='post' action='sell.php'>
                         <input id='scourse' name='course' placeholder='Course' type='text'/>
                         <input id='smandatory' type='checkbox' name='smandatory' value='1'>
@@ -210,7 +213,7 @@ color: white;
                         <input class='preset' name='title' value='Psychology' readonly>
                         <input class='preset' name='authors' value='Daniel L. Schacter, Daniel T. Gilbert, Daniel M. Wegner' readonly>
                         <input class='preset' name='publisher' value='Worth Publishers' readonly>
-                        <input class='preset' name='description' value='The result of an exclusive partnership with Scientific American, the articles in this collection were personally selected from the pages of world's foremost scientific magazine by the authors Dan Schacter, Dan Gilbert, and Dan Wegner.' readonly>
+                        <input class='preset' name='description' value='The result of an exclusive partnership with Scientific American, the articles in this collection were personally selected from the pages of worlds foremost scientific magazine by the authors Dan Schacter, Dan Gilbert, and Dan Wegner.' readonly>
                         <input class='preset' name='pic' value='http://bks5.books.google.com/books?id=emAyzTNy1cUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api' readonly>
                         <input class='preset' name='isbn10' value='1429237198' readonly>
                         <input class='preset' name='isbn13' value='9781429237192' readonly>
@@ -228,6 +231,7 @@ color: white;
                     </ol>
                 </div>
                 <div class='sellform'>
+                    <button id='3c' type='submit' name='sellformentrance' class='sellformentrance btn'>Sell</button>
                     <form class='actualform' name='sellform' method='post' action='sell.php'>
                         <input id='scourse' name='course' placeholder='Course' type='text'/>
                         <input id='smandatory' type='checkbox' name='smandatory' value='1'>

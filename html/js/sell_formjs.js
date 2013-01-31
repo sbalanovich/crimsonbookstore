@@ -3,12 +3,27 @@ var ajaxRequest = null;
 
 $(document).ready(function() {
     $('input.preset').hide();
+    $('.actualform').hide();
+    $('.sellformentrance').show();
+    //when one result is clicked for common results
+        $('#big').on('click', '.sellformentrance', function() {
+            //hide any open forms and current button
+            $('.actualform').hide();
+            $('.sellformentrance').show();
+            $(this).hide();
 
+            //show form
+            $('#'+this.id+'.actualform').show();
+            //hide presets in sellform
+            $('input.preset').hide();
+
+        });
     //query google books api on button clicked
     var books = {};
     var ajaxHandler = function() {
         //remove any existing search results
         $('.sellresult').remove(); 
+        $('#common').remove();
         //remove any existing message that tells user they sold a book   
         $('#message').remove();
         
@@ -25,9 +40,8 @@ $(document).ready(function() {
                 else
                     books[i]["authors"]="No Author Available";
                 //title
-                if (typeof(json.items[i].volumeInfo.subtitle) != "undefined"){
+                if (json.items[i].volumeInfo.subtitle)
                     books[i]["title"] = json.items[i].volumeInfo.title + ": " + json.items[i].volumeInfo.subtitle;
-                }
                 else
                     books[i]["title"]=json.items[i].volumeInfo.title;
                 //publisher
@@ -72,16 +86,19 @@ $(document).ready(function() {
                 else
                     books[i]["pic"]="http://www.myworldhut.com/product_images/u/book_image_not_available__14165.jpg";
                 //put search one result and one form into #big inside a div with class sellresult
-                $("<div id='" + i + "' class='sellresult well'><div class='sellbook'><img src='" + books[i]["pic"] + "' alt='book image'><ol><li id='stitle'>" + books[i]["title"] + "</li><li id='sauthors'>" + books[i]["authors"] + "</li><li id='spublisher'>" + books[i]["publisher"] + " | " + books[i]["isbn13"] + " </li><li id='sdescription'>" + books[i]["description"] + " </li></ol></div><div class='sellform'><form class='actualform' name='sellform' method='post' action='sell.php'><input id='scourse' name='course' placeholder='Course' type='text'/><input id='smandatory' type='checkbox' name='smandatory' value='1'><label for='smandatory'>Required Text?</label><br><input id='sprice' name='price' placeholder='List your price' type='text'/><div class=selectstyle><select id='sbookcondition' vertical-align='top' name='book_condition' size='1'><option value='' class='uneditable-input' selected='selected'>Condition</option><option value='new'>Outstanding</option><option value='exceeds'>Exceeds Expectations</option><option value='acceptable'>Acceptable</option><option value='poor'>Poor</option><option value='dreadful'>Dreadful</option><option value='troll'>Troll</option></select></div><textarea id='scomments' name='comments' placeholder='Comments' maxlength='800' rows='3'></textarea><button id='sbutton' type='submit' name='sellformsubmit' class='btn'>Submit</button><input class='preset' name='title' value='" + books[i]["title"] + ": " + books[i]["subtitle"] + "' readonly><input class='preset' name='authors' value='" + books[i]["authors"] + "' readonly><input class='preset' name='publisher' value='" + books[i]["publisher"] + "' readonly><input class='preset' name='description' value='" + books[i]["description"] + "' readonly><input class='preset' name='pic' value='" + books[i]["pic"] + "' readonly><input class='preset' name='isbn10' value='" + books[i]["isbn10"] + "' readonly><input class='preset' name='isbn13' value='" + books[i]["isbn13"] + "' readonly></form></div></div>").appendTo('#big'); 
-                $('.sellform').hide();
+                $("<div id='" + i + "' class='sellresult well'><div class='sellbook'><img src='" + books[i]["pic"] + "' alt='book image'><ol><li id='stitle'>" + books[i]["title"] + "</li><li id='sauthors'>" + books[i]["authors"] + "</li><li id='spublisher'>" + books[i]["publisher"] + " | " + books[i]["isbn13"] + " </li><li id='sdescription'>" + books[i]["description"] + " </li></ol></div><div class='sellform'><button id='" + i + "' type='submit' name='sellformentrance' class='sellformentrance btn'>Sell</button><form class='actualform' name='sellform' method='post' action='sell.php'><input id='scourse' name='course' placeholder='Course' type='text'/><input id='smandatory' type='checkbox' name='smandatory' value='1'><label for='smandatory'>Required Text?</label><br><input id='sprice' name='price' placeholder='List your price' type='text'/><div class=selectstyle><select id='sbookcondition' vertical-align='top' name='book_condition' size='1'><option value='' class='uneditable-input' selected='selected'>Condition</option><option value='new'>Outstanding</option><option value='exceeds'>Exceeds Expectations</option><option value='acceptable'>Acceptable</option><option value='poor'>Poor</option><option value='dreadful'>Dreadful</option><option value='troll'>Troll</option></select></div><textarea id='scomments' name='comments' placeholder='Comments' maxlength='800' rows='3'></textarea><button id='sbutton' type='submit' name='sellformsubmit' class='btn'>Submit</button><input class='preset' name='title' value='" + books[i]["title"] + "' readonly><input class='preset' name='authors' value='" + books[i]["authors"] + "' readonly><input class='preset' name='publisher' value='" + books[i]["publisher"] + "' readonly><input class='preset' name='description' value='" + books[i]["description"] + "' readonly><input class='preset' name='pic' value='" + books[i]["pic"] + "' readonly><input class='preset' name='isbn10' value='" + books[i]["isbn10"] + "' readonly><input class='preset' name='isbn13' value='" + books[i]["isbn13"] + "' readonly></form></div></div>").appendTo('#big'); 
+                $('.actualform').hide();
             }
             //when one result is clicked
-            $('#big').on('click', '.sellresult', function() {
-                //hide any open forms
-                $('.sellform').hide();
+            $('#big').on('click', '.sellformentrance', function() {
+                //hide any open forms and current button
+                $('.actualform').hide();
+                $('.sellformentrance').show();
+                $(this).hide();
+
                 //show form
                 var ident=this.id;
-                $('#'+ident+' .sellform').show();
+                $('#'+ident+' .actualform').show();
                 //hide presets in sellform
                 $('input.preset').hide();
 
