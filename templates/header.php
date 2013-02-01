@@ -36,16 +36,13 @@
                         require '../html/db/connect.php';
                         require_once '../includes/constants.php';
 
-                        $query = mysql_query("SELECT * FROM users WHERE (`id` = 1)");
+                        $query = mysql_query("SELECT * FROM users WHERE (`id` =" . $_SESSION["id"] . ")");
                         $results = mysql_fetch_array($query);
-                        echo('<a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-user icon-white"></i>' . $results['firstname'] . " " . $results['lastname'] . '<strong class="caret"></strong></a>')
+                        echo('<a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-user icon-white"></i>' . $results['fullname'] . '<strong class="caret"></strong></a>');
                     ?>
                         <ul class="dropdown-menu">
                         <?php
-                            echo('<li> Report Bug </li>');
-                            echo('<li> Feedback </li>');
-                            echo('<li> Feature Request </li>');
-                            echo('<li> Log Out </li>');
+                            echo("<li><a class='lin' href='reportbug.php'>Report a Bug</a><a class='lin' href='feedback.php'>Feedback</a><a class='logout lin' href='logout.php'>Log Out</a></li>");
                         ?>
                         </ul>
                     </li>
@@ -58,18 +55,22 @@
                             require '../html/db/connect.php';
                             require_once '../includes/constants.php';
 
-                            $query = mysql_query("SELECT * FROM user_cart WHERE (`user_id` = 1)");
-                            if (mysql_num_rows($query) !== 0)
-                            {                                
-                                while($results = mysql_fetch_array($query))
+                            $query = query("SELECT * FROM user_cart WHERE user_id =?", $_SESSION["id"]);
+                            if (!empty($query))
+                            {          
+                                foreach($query as $row)
                                 {
-                                    $query2 = mysql_query("SELECT * FROM books WHERE (`id` =" . $results['listing_id'] . "1)");
-                                    $results2 = mysql_fetch_array($query2);
-                                    echo('<li>' . $results2['title'] . '</li>');
+                                    $query2 = query("SELECT * FROM listings WHERE id=?", $row['listing_id']);
+                                    if(!empty($query2)) {
+                                        $bookid = $query2['book_id'];
+                                        $query3 = query("SELECT * FROM books WHERE id=?", $bookid);
+                                        if(!empty($query3))
+                                            echo('<li>' . $query3['title'] . '</li>');
+                                    }
                                 }
                             }
                             else
-                                echo("<h5>Nothing added to cart!</h5>")
+                                echo("<h5>Nothing added to cart!</h5>");
                         ?>
                         </ul>
                     </li>
@@ -82,16 +83,22 @@
                             require '../html/db/connect.php';
                             require_once '../includes/constants.php';
 
-                            $query = mysql_query("SELECT * FROM user_starred WHERE (`user_id` = 1)");
-                            if (mysql_num_rows($query) !== 0)
+                            $query1 = query("SELECT * FROM user_starred WHERE user_id =?", $_SESSION["id"]);
+                            if (!empty($query1))
                             {                     
-                                while($results = mysql_fetch_array($query))
+                                foreach($query1 as $row)
                                 {
-                                    echo('<li>' . $results['listing_id'] . '</li>');
+                                    $query2 = query("SELECT * FROM listings WHERE id =?", $row['listing_id']);
+                                    if(!empty($query2)) {
+                                        $bookid = $query2['book_id'];
+                                        $query3 = query("SELECT * FROM books WHERE id =?", $bookid);
+                                        if (!empty($query3))
+                                            echo('<li>' . $query3['title'] . '</li>');
+                                    }
                                 }
                             }
                             else
-                                echo("<h5>Nothing Starred!</h5>")
+                                echo("<h5>Nothing Starred!</h5>");
                         ?>
                         </ul>
                     </li>
@@ -105,16 +112,18 @@
                             require '../html/db/connect.php';
                             require_once '../includes/constants.php';
 
-                            $query = mysql_query("SELECT * FROM listings WHERE (`user_id` = 1)");
-                            if (mysql_num_rows($query) !== 0)
+                            $rows = query("SELECT * FROM listings WHERE user_id = ?", $_SESSION["id"]);
+                            if (!empty($rows))
                             {                     
-                                while($results = mysql_fetch_array($query))
+                                foreach($rows as $row)
                                 {
-                                    echo('<li>' . $results['book_id'] . '</li>');
+                                    $query2 = query("SELECT * FROM books WHERE id = ?", $row['book_id']);
+                                    if(!empty($query2))
+                                        echo('<li>' . $query2[0]['title'] . '</li>');
                                 }
                             }
                             else
-                                echo("<h4>No Listings!</h4>")
+                                echo("<h4>No Listings!</h4>");
 
                         ?>
                         </ul>

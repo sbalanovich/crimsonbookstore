@@ -52,6 +52,9 @@ body{
             text-shadow: 1px -1px 2px #222;
           }
         }
+        a.lin{
+          color: rgba(71, 64, 64, 0.75);
+        }
       }
       li.dropdown.open {
           .dropdown-toggle {
@@ -76,6 +79,53 @@ body{
 
 #mainpage {
   background-color: rgba(0,0,0, .3);
+}
+
+#bug-bar{
+  font-weight: bold;
+  width: auto;
+  text-align: center;
+  padding: 10px 0 12px 0;
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+  //border: 1px solid #ccc;
+  border-bottom: 1px rgba(199, 183, 160, 0.83);
+  //background: -webkit-gradient(linear, left top, left bottom, from(#999999), to(#cccccc));
+  //background: -moz-linear-gradient(top center, #999999,#cccccc);
+  background: rgba(199, 183, 160, 0.83);
+  //text-shadow: 1px 1px 1px #cccccc;
+  @include border-radius(5px 5px 0 0);
+  @include box-shadow( 0 -1px 1px rgb(197, 189, 172));
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  z-index: 2;
+  color: rgb(116, 1, 1);
+  font-size: 28px;
+  ul{
+  list-style: none;
+  }
+}
+#feedback-bar{
+  font-weight: bold;
+  ul {
+    list-style: none;
+  }
+  width: auto;
+  text-align: center;
+  padding: 10px 0 12px 0;
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+  //border: 1px solid #ccc;
+  border-bottom: 1px rgba(199, 183, 160, 0.83);
+  //background: -webkit-gradient(linear, left top, left bottom, from(#999999), to(#cccccc));
+  //background: -moz-linear-gradient(top center, #999999,#cccccc);
+  background: rgba(199, 183, 160, 0.83);
+  //text-shadow: 1px 1px 1px #cccccc;
+  @include border-radius(5px 5px 0 0);
+  @include box-shadow( 0 -1px 1px rgb(197, 189, 172));
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  z-index: 2;
+  color: rgb(116, 1, 1);
+  font-size: 28px;
 }
 
 /* pill bar*/
@@ -176,7 +226,89 @@ body{
     opacity:0.97;
     filter:alpha(opacity=95); /* For IE8 and earlier */
 }
+.reportbug{
+  margin-left: 37%;
+  width: 60%;
+}
+.feedback{
+  margin-left: 37%;
+  width: 60%;
+}
+#bug-content{
+  line-height: 20px;   
+  background: rgba(199, 183, 160, 0.83); 
+  overflow:auto; 
+  border-radius: 0px 0px 5px 5px;
+  padding-left:30px; 
+  padding-right:30px;
+  padding-bottom:30px;
+  padding-top: 30px;
+  min-height: 430px;
+  @include box-shadow( 0px 1px 3px rgba(0, 0, 0, 0.7), inset 1px -2px 4px rgba(255, 255, 255, 0.34));  
+  input {
+    width: 20%
+  }
+  label {
+    //display: inline-block;
+    font-style: italic;
+  }
+  textarea {
+    width: 42%;
+  }
+  .bugr{
+    margin-left: 18%;
+  }
+}
 
+#feedback-content{
+  line-height: 20px;   
+  background: rgba(199, 183, 160, 0.83); 
+  overflow:auto; 
+  border-radius: 0px 0px 5px 5px;
+  padding-left:30px; 
+  padding-right:30px;
+  padding-bottom:30px;
+  padding-top: 30px;
+  min-height: 430px;
+  @include box-shadow( 0px 1px 3px rgba(0, 0, 0, 0.7), inset 1px -2px 4px rgba(255, 255, 255, 0.34));  
+  textarea {
+    width: 42%;
+  }
+  input {
+    width: 20%
+  }
+  label {
+    //display: inline-block;
+    font-style: italic;
+  }
+  .fdbk{
+    margin-left: 18%;
+  }
+}
+.btnreturns{
+  width: 22%;
+  margin-left: 40%;
+}
+.returnsell{
+  //margin-left: 29%
+}
+.returnlink{
+  display: inline-block;
+  height: 45px;
+  width: 100%;
+  font-size: 20px;
+  text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
+  color: rgb(252, 234, 234);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+  background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+  background-color: rgb(80, 0, 0);
+  &:hover{
+     background-color: #500000;
+     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+     @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+    color: rgb(252, 234, 234);
+  }
+}
  /* Style of pill Content */
 #pill-content {
   line-height: 20px;

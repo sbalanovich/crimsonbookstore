@@ -1,10 +1,8 @@
 <?php
 
     // configuration
-    require("../includes/config.php");
+    require_once(dirname(__FILE__) . "/../includes/config.php");
     
-    $_SESSION["id"]=1;
-
     // if form was submitted
     if (isset($_POST['sellformsubmit']))
     {
