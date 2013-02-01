@@ -8,14 +8,29 @@
     // if form was submitted
     if (isset($_POST['sellformsubmit']))
     {
-        //check if book is in database, insert if not
+        //check if book is in database
         $isbookneeded=query("SELECT * FROM books WHERE isbn13=?", $_POST["isbn13"]);
         if($isbookneeded === false) {
         	apologize("Unable to look for this book in books");
         }
-        $class_id=1; //need to query
-        if(empty($isbookneeded)) {
-			$insertbook=query("INSERT INTO books (title, author, publisher, class_id, smandatory, picture, description, isbn10, isbn13) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", $_POST["title"], $_POST["authors"], $_POST["publisher"], $class_id, $_POST["smandatory"], $_POST["pic"], $_POST["description"], $_POST["isbn10"], $_POST["isbn13"]);
+        if(isset($_POST["smandatory"]))
+            $smandatory=1;
+        else
+            $smandatory=0;
+        // find class_id
+        $class_id=2; //need to query
+        // check to see if need to insert another of the same book (for diff classes)
+        $n = count($isbookneeded);
+        $add1 = true;
+         for($i=0; $i==$n; $i++){
+            if($isbookneeded[$i]['class_id'] == $class_id)
+                $add1 = false;
+            else
+                $add1 = true;
+        }
+        // insert book if need new one or none at all
+        if(empty($isbookneeded) || ($add1 === true)) {
+			$insertbook=query("INSERT INTO books (title, author, publisher, class_id, smandatory, picture, description, isbn10, isbn13) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", $_POST["title"], $_POST["authors"], $_POST["publisher"], $class_id, $smandatory, $_POST["pic"], $_POST["description"], $_POST["isbn10"], $_POST["isbn13"]);
 	        if ($insertbook === false) {
 	            apologize("Unable to insert book into books");
 	        }

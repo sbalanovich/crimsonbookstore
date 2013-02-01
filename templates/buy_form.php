@@ -148,9 +148,13 @@
             </div> 
         </fieldset>
         <br>
+<?php
+#        <div id="classtable">
+
+#        </div>
+?>
         <div id="resultstable">
 
         </div>
-</div>
 </div>
 

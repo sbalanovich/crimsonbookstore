@@ -102,17 +102,18 @@ body{
     text-align: center;
   }
   .inactive a {
-    color: #000000;
-    text-shadow: 0 1px 1px rgba(241, 230, 212, 0.75);
+    color: rgb(71, 47, 31);
+    text-shadow: 0 1px 1px rgba(211, 201, 185, 0.75);
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(236, 221, 199, 0.75)), to(rgba(211, 192, 173, 0.89)));
     background: -moz-linear-gradient(linear, left top, left bottom, from(rgba(236, 221, 199, 0.75)), to(rgba(211, 192, 173, 0.89)));
     @include border-radius(5px 5px 0 0);
     @include box-shadow(inset 0 0 1px white);
-    padding: 5px 0;
+    padding: 5px 0 9px 0;    
     -webkit-box-shadow: inset 0 0 1px white;
     -moz-box-shadow: inset 0 0 1px white;
     border: 1px solid rgb(111, 103, 95);
     z-index: 1;
+    font-size: 22px;
     &:hover {
       background: -webkit-gradient(linear, left bottom, left top, from(rgba(236, 221, 199, 0.75)), to(rgba(211, 192, 173, 0.89)));
       background: -moz-linear-gradient(top center, rgba(236, 221, 199, 0.75), rgba(211, 192, 173, 0.89));
@@ -124,7 +125,7 @@ body{
     }
   }
   .active a{
-    padding: 10px 0 8px 0;
+    padding: 10px 0 12px 0;
     text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
     //border: 1px solid #ccc;
     border-bottom: 1px rgba(199, 183, 160, 0.83);
@@ -138,7 +139,7 @@ body{
     -moz-background-clip: padding-box;
     z-index: 2;
     color: rgb(116, 1, 1);
-    font-size: 18px;
+    font-size: 28px;
     &:focus {
       outline: none;
     }
@@ -190,16 +191,12 @@ body{
   padding-top: 30px;
   min-height: 430px;
   @include box-shadow( 0px 1px 3px rgba(0, 0, 0, 0.7), inset 1px -2px 4px rgba(255, 255, 255, 0.34));  
-    #sellsearchbar{
+  #sellsearchbar{
     margin-top: 20px;
     #booksearchinput{
       margin-bottom: 0px;
       font-size: 16px;
-      width: 440px;
-      
-    }
-    #sellsearchsubmit  {
-
+      width: 440px;      
     }
     input{
       border-color: rgb(184, 183, 178);
@@ -216,71 +213,92 @@ body{
     @include box-shadow(-1px 1px 1px rgba(0, 0, 0, 0.4), inset -1px 1px 2px rgba(199, 195, 189, 0.4));
     margin-top: 20px;
     border: rgb(172, 158, 130);
-
-
   }
   #big{
+    #common{
+      font-size:28px;
+      color: #740101;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
     .sellresult{
       background-color: rgba(150, 127, 102, 0.28);
       margin: 10px 0 10px 0px;
-      cursor: pointer;
+      //cursor: pointer;
       @include box-shadow(inset 0px 1px 3px rgba(0, 0, 0, .8));
       border: rgb(172, 158, 130);
-      &:hover{
-        @include box-shadow(inset 0px 1px 5px rgba(0, 0, 0, .8));
-        border: rgb(172, 158, 130);
+      //&:hover{
+        //@include box-shadow(inset 0px 1px 5px rgba(0, 0, 0, .8));
+        //border: rgb(172, 158, 130);
+      // }
+    }
 
-      }
-      .sellbook{
+    .sellbook{
+      display: inline-block;
+      //margin-left: 2%;
+      width: 49%;
+      img{
         display: inline-block;
-        //margin-left: 2%;
-        width: 49%;
-        img{
-          display: inline-block;
-          width: 75px;
-          vertical-align: top;
-        }
-        ol {
-          -moz-user-select: -moz-none;
-          -khtml-user-select: none;
-          -webkit-user-select: none;
-          list-style-type: none;
-          display: inline-block;
-          vertical-align: top;
-          margin: 0 0 0 10px;
-          width: 80%;
-          li{
-            font-family: "Helvetica Neue", "Helvetica", "Arial", Sans-Serif;
-            overflow: hidden;
-             text-overflow: ellipsis;
-             display: -webkit-box;
-             -webkit-line-clamp: 3;
-             -webkit-box-orient: vertical;
-          }
-          #stitle {
-            font-size: 16px;
-            line-height: 20px;
-          }
-          #sauthors{
-            font-size:12;
-            line-height: 20px;
-          }
-          #spublisher{
-            font-size: 11px;
-            line-height: 15px;
-          }
-          #sdescription{
-            font-size: 11px;
-            line-height: 15px;
-          }
-        }
-
+        width: 75px;
+        vertical-align: top;
       }
-      .sellform{
+      ol {
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        list-style-type: none;
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 0 0 10px;
+        width: 80%;
+        li{
+          font-family: "Helvetica Neue", "Helvetica", "Arial", Sans-Serif;
+          overflow: hidden;
+           text-overflow: ellipsis;
+           display: -webkit-box;
+           -webkit-line-clamp: 3;
+           -webkit-box-orient: vertical;
+        }
+        #stitle {
+          font-size: 16px;
+          line-height: 20px;
+        }
+        #sauthors{
+          font-size:12;
+          line-height: 20px;
+        }
+        #spublisher{
+          font-size: 11px;
+          line-height: 15px;
+        }
+        #sdescription{
+          font-size: 11px;
+          line-height: 15px;
+        }
+      }
+    }
+
+    .sellform{
         vertical-align: top;
         display: inline-block;
         //margin-right: 2%;
         width: 49%;
+        .sellformentrance{
+          margin-left: 50%;
+          margin-top: 6%;
+          height: 50px;
+          width: 100px;
+          text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
+          color: rgb(252, 234, 234);
+          background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+          background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+          background-color: rgb(80, 0, 0);
+          &:hover{
+             background-color: #500000;
+             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+             @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+          }
+        }
         .actualform{
           margin: 0 0 0px 0;
           #scourse{
@@ -318,7 +336,6 @@ body{
             overflow: hidden;
             height: 30px;
             display: inline-block;
-
             select{
               height: 30px;
               //-webkit-appearance: none;
@@ -330,15 +347,7 @@ body{
                // border-color: rgba(125, 0, 0, 0.58);
                // @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(125, 0, 0, 0.68));
               }
-              option {
-
-              }
-
             }
-          }
-          
-          #scomments{
-            
           }
           textarea {
             height: 40px;
@@ -365,17 +374,235 @@ body{
               background-color: #500000;
               text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
               @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
-
-
             }
           }
         }
+    }
+  }
+    
+
+}
+
+
+.coursepack{
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+  .cpbutton{
+    margin-left: 15%;
+    margin-top: 9px;    
+    height: 45px;
+    width: 90%;
+    font-size: 20px;
+    text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
+    color: rgb(252, 234, 234);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background-color: rgb(80, 0, 0);
+    &:hover{
+       background-color: #500000;
+       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+       @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+    }
+  }
+}
+.cpform{
+  margin: 10px 5% 0px 5%;
+  background-color: rgba(150, 127, 102, 0.28);
+  border: #ac9e82;
+  @include box-shadow (inset 0px 1px 3px rgba(0, 0, 0, 0.8));
+  .cplabel{
+    font-size: 20px;
+    margin-left: 0%;
+    color: #740101;
+    margin-bottom: 5px;
+  }
+  #scourse{
+    width: 200px;
+    margin-bottom: 0px;
+  }
+  #smandatory{
+    margin-left: 10px;
+    vertical-align: top;
+    margin-top: 8px;
+  }
+  label {
+    display: inline-block;
+    margin-left: 7px;
+    vertical-align: top;
+    margin-top: 5px;
+  }
+  #sprice{
+    width: 200px;
+    display: inline-block;
+    margin-top:10px;
+    margin-bottom: 1px;
+  }
+  input{
+    background-color: rgb(228, 218, 202);
+    &:focus{
+      border-color: rgba(125, 0, 0, 0.58);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
+    }
+  }
+  #sbookcondition{
+    margin-left: 10px;
+  }
+  .selectstyle{
+    overflow: hidden;
+    height: 30px;
+    display: inline-block;
+    select{
+      height: 30px;
+      //-webkit-appearance: none;
+      vertical-align: top;
+      padding-top: 0;
+      background-color: rgb(228, 218, 202);
+      &:focus{
+        outline: none;
+       // border-color: rgba(125, 0, 0, 0.58);
+       // @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(125, 0, 0, 0.68));
       }
+    }
+  }
+  textarea {
+    height: 40px;
+    width: 350px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    background-color: rgb(228, 218, 202);
+    &:focus{
+      border-color: rgba(125, 0, 0, 0.58);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
+    }
+  }
+  button{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    height: 50px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background-color: rgb(80, 0, 0);
+    color: rgb(252, 234, 234);
+    &:hover{
+      background-color: #500000;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
     }
   }
 }
 
 
+.notfound{
+  display: inline-block;
+  width: 24%;
+  .nfbutton{
+    margin-left: 15%;
+    margin-top: 9px;    
+    height: 45px;
+    width: 90%;
+    font-size: 20px;
+    text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
+    color: rgb(252, 234, 234);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background-color: rgb(80, 0, 0);
+    &:hover{
+       background-color: #500000;
+       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+       @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+    }
+  }
+}
+.nfform{
+  margin: 10px 5% 0px 5%;
+  background-color: rgba(150, 127, 102, 0.28);
+  border: #ac9e82;
+  @include box-shadow (inset 0px 1px 3px rgba(0, 0, 0, 0.8));
+  .nflabel{
+    font-size: 20px;
+    margin-left: 0%;
+    margin-bottom: 5px;
+    color: #740101;
+  }
+  #scourse{
+    width: 200px;
+    margin-bottom: 0px;
+  }
+  #smandatory{
+    margin-left: 10px;
+    vertical-align: top;
+    margin-top: 8px;
+  }
+  label {
+    display: inline-block;
+    margin-left: 7px;
+    vertical-align: top;
+    margin-top: 5px;
+  }
+  #sprice{
+    width: 200px;
+    display: inline-block;
+    margin-top:10px;
+    margin-bottom: 1px;
+  }
+  input{
+    background-color: rgb(228, 218, 202);
+    &:focus{
+      border-color: rgba(125, 0, 0, 0.58);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
+    }
+  }
+  #sbookcondition{
+    margin-left: 10px;
+  }
+  .selectstyle{
+    overflow: hidden;
+    height: 30px;
+    display: inline-block;
+    select{
+      height: 30px;
+      //-webkit-appearance: none;
+      vertical-align: top;
+      padding-top: 0;
+      background-color: rgb(228, 218, 202);
+      &:focus{
+        outline: none;
+       // border-color: rgba(125, 0, 0, 0.58);
+       // @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(125, 0, 0, 0.68));
+      }
+    }
+  }
+  textarea {
+    height: 40px;
+    width: 350px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    background-color: rgb(228, 218, 202);
+    &:focus{
+      border-color: rgba(125, 0, 0, 0.58);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
+    }
+  }
+  button{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    height: 50px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background-color: rgb(80, 0, 0);
+    color: rgb(252, 234, 234);
+    &:hover{
+      background-color: #500000;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+    }
+  }
+}
 
 #bottom {
   font-size: smaller;
@@ -442,270 +669,3 @@ td
     text-align: center;
   }
 }
-
-/* UNNECESSARY
-
-.arrow_box {
-    position: relative;
-    background: #731515;
-    border: 4px solid #c2e1f5;
-} 
-.arrow_box:after, .arrow_box:before {
-    top: 100%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-}
-
-.arrow_box:after {
-    border-color: rgba(115, 21, 21, 0);
-    border-top-color: #731515;
-    border-width: 30px;
-    left: 50%;
-    margin-left: -30px;
-}
-.arrow_box:before {
-    border-color: rgba(194, 225, 245, 0);
-    border-top-color: #c2e1f5;
-    border-width: 36px;
-    left: 50%;
-    margin-left: -36px;
-} 
-
-.container
-{
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-#top
-{
-    // center contents 
-    text-align: center;
-}
-
-#middle
-{
-     //center contents 
-    text-align: center;
-}
-#navbtn
-{
-    width:50px;
-    height:20px;
-    transition: width 1s, height 1s, transform 1s;
-    -moz-transition: width 2s, height 2s, -moz-transform 2s;
-    -webkit-transition: width 2s, height 2s, -webkit-transform 2s;
-    -o-transition: width 2s, height 2s,-o-transform 2s;
-}
-
-#navbtn:hover
-{
-    width:100px;
-    height:20px;
-} 
-
-#loginheader
-{
-font-family:"Times New Roman", Times, serif;
-color:#F0F7FF;
-}
-
-.background {
-    background: none repeat scroll 0 0 #FFFFFF;
-    height: 200%;
-    left: -50%;
-    position: fixed;
-    width: 200%;}
-
-.background img{
-    bottom: 0;
-    display: block;
-    left: 0;
-    margin: auto;
-    min-height: 50%;
-    min-width: 50%;
-    right: 0;
-    top: 0;}
-
-#departnav {
-    max-height: 500px;
-    overflow: hidden;
-    overflow-y: auto;
-}
-
-
-#departnavbtn {
-  background-image: -moz-linear-gradient(top, #800000, #400000);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#800000), to(#400000));
-  background-image: -webkit-linear-gradient(top, #800000, #400000);
-  background-image: -o-linear-gradient(top, #800000, #400000);
-  background-image: linear-gradient(to bottom, #800000, #400000);
-  color:#FFFFFF;
-}
-
-.centercontent
-{
-background: #FFFFFF; 
-overflow:auto; 
-padding-left:30px; 
-padding-right:30px;
-padding-bottom:30px;
- -moz-box-shadow:    3px 3px 5px 6px #000000;
-  -webkit-box-shadow: 0px 0px 5px 6px #000000;
-  box-shadow:         -1px 6px 5px 6px #000000;
-}
-
-.centercontentsmall
-{
-background: #FFFFFF; 
-overflow:auto; 
-padding:10px;
- -moz-box-shadow:    3px 3px 5px 6px #000000;
-  -webkit-box-shadow: 0px 0px 5px 6px #000000;
-  box-shadow:         -1px 6px 5px 6px #000000;
-}
-
-.shadow
-{
-background: #FFFFFF; 
- -moz-box-shadow:    3px 3px 5px 6px #000000;
-  -webkit-box-shadow: 0px 0px 5px 6px #000000;
-  box-shadow:         -1px 6px 5px 6px #000000;
-}
-
-#coverfloat
-{
-    padding: 15px;
-    height: 250px;
-    width: 200px;
-    background:url(http://mameara.com/wp-content/uploads/2010/07/Dark-Wood-Texture.jpg); 
-    -moz-box-shadow:    3px 3px 5px 6px #000000;
-    -webkit-box-shadow: 0px 0px 5px 6px #000000;
-    box-shadow:         -1px 6px 5px 6px #000000;
-    transition: box-shadow 1s, width 1s, height 1s, transform 1s;
-    transition-delay: 0.5s;
-    -moz-transition: box-shadow 1s, width 2s, height 2s, -moz-transform 2s;
-    -moz-transition-delay:0.5s;
-    -webkit-transition: box-shadow 1s, width 2s, height 2s, -webkit-transform 2s;
-    -webkit-transition-delay:0.5s;
-    -o-transition: box-shadow 1s, width 2s, height 2s,-o-transform 2s;
-    -o-transition-delay:0.5;
-}
-#coverfloat:hover
-{
-    padding: 15px;
-    height: 300px;
-    width: 250px;
-    background:url(http://mameara.com/wp-content/uploads/2010/07/Dark-Wood-Texture.jpg); 
-     -moz-box-shadow:    3px 3px 5px 6px #000000;
-    -webkit-box-shadow: 0px 0px 5px 6px #000000;
-    box-shadow:         0 8px 5px 10px #000000;
-
-}
-
-#coverpreview
-{
-    height: 100px;
-    width: 80px;
-    background: #FFFFFF;    transition: width 1s, height 1s, transform 1s;
-    transition-delay: 0.5s;
-    -moz-transition:  width 2s, height 2s, -moz-transform 2s;
-    -moz-transition-delay:0.5s;
-    -webkit-transition:  width 2s, height 2s, -webkit-transform 2s;
-    -webkit-transition-delay:0.5s;
-    -o-transition:  width 2s, height 2s,-o-transform 2s;
-    -o-transition-delay:0.5;
-}
-#coverpreview:hover
-{
-    height: 120px;
-    width: 100px;
-}
-
-.nothere
-{
-display:none;
-}
-
-.here
-{
-display:block;
-}
-
-table.msgtable {
-    border: none;
-    border-collapse: collapse;
-}
-
-td.msgcol { 
-width: 50px; height: 50px; background-color: red; 
-}
-
-.messagebox{
-     position:absolute;
-     width:100px;
-     margin-left:30px;
-     border:1px solid #c93;
-     background:#ffc;
-     padding:3px;
-    }
-    
-.messageboxok{
-     position:absolute;
-     width:auto;
-     margin-left:30px;
-     border:1px solid #349534;
-     background:#C9FFCA;
-     padding:3px;
-     font-weight:bold;
-     color:#008000;
-    } 
-    
-.messageboxerror{
-     position:absolute;
-     width:auto;
-     margin-left:30px;
-     border:1px solid #CC0000;
-     background:#F7CBCA;
-     padding:3px;
-     font-weight:bold;
-     color:#CC0000;
-    }
-
-#welcomeusername
-{
-text-align: center;
-}
-        
-#publisher
-{
-font-size:11px;
-text-align:left;
-}
-
-#carcat
-{
-height: 540px;
-width: 1080px;
-}
-
-#booksearch
-{
-height:64px;
-font-size:24px;
-text-align:center;
-width:100%;
-}
-
-#cover
-{
-padding: 15px;
-height: 250px;
-width: 200px;
-}   
-
-*/

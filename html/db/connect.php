@@ -1,8 +1,8 @@
-<?php
+ <?php
 
-  $host = "mysql.crimsonbookstore.com";
-  $user = "sergurke";
-  $pass = "Crimzon1516";
+  $host = "crimsonbookstore";
+  $user = "jharvard";
+  $pass = "crimson";
 
   $databaseName = "newcrimsonbookstore";
   $tableName = "variables";
