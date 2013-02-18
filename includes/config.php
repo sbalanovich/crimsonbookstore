@@ -31,13 +31,13 @@
     // enable sessions
     session_start();
 
-#    // require authentication for most pages
-#    if (!preg_match("{(?:index|login|logout|register)\.php$}", $_SERVER["PHP_SELF"]))
-#    {
-#        if (empty($_SESSION["id"]))
-#        {
-#            redirect("/");
-#        }
-#    }
+   // require authentication for most pages
+   if (!preg_match("{(?:index|logout)\.php$}", $_SERVER["PHP_SELF"]))
+   {
+       if (empty($_SESSION["id"]))
+       {
+           redirect("/");
+       }
+   }
 
 ?>

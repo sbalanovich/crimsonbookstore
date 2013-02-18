@@ -2,7 +2,6 @@
 
     // configuration
     require_once(dirname(__FILE__) . "/../includes/config.php");
-    
     // if form was submitted
     if (isset($_POST['sellformsubmit']))
     {
@@ -18,10 +17,9 @@
         // find class_id
         $class_id=2; //need to query
         // check to see if need to insert another of the same book (for diff classes)
-        $n = count($isbookneeded);
         $add1 = true;
-         for($i=0; $i==$n; $i++){
-            if($isbookneeded[$i]['class_id'] == $class_id)
+        foreach($isbookneeded as $row){
+            if($row['class_id'] == $class_id)
                 $add1 = false;
             else
                 $add1 = true;
