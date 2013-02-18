@@ -3,7 +3,7 @@
 <html>
 
     <head>
-
+        <?php $_SESSION["id"] = 1; ?>
         <link href="css/bootstrap.css" rel="stylesheet"/>
         <link href="css/bootstrap-responsive.css" rel="stylesheet"/>
         <link href="css/styles.css" rel="stylesheet"/>
@@ -36,9 +36,8 @@
                         require '../html/db/connect.php';
                         require_once '../includes/constants.php';
 
-                        $query = mysql_query("SELECT * FROM users WHERE (`id` =" . $_SESSION["id"] . ")");
-                        $results = mysql_fetch_array($query);
-                        echo('<a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-user icon-white"></i>' . $results['fullname'] . '<strong class="caret"></strong></a>');
+                        $query = query("SELECT * FROM users WHERE id =?", $_SESSION["id"]);
+                        echo('<a class="dropdown-toggle " href="#" data-toggle="dropdown"> <i class="icon-user icon-white"></i>' . $query[0]['fullname'] . '<strong class="caret"></strong></a>');
                     ?>
                         <ul class="dropdown-menu">
                         <?php
